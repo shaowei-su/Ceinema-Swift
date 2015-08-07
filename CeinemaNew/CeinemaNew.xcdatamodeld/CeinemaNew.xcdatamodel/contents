@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="LocalSavedMedia" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presenterName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="LocalSavedMedia" positionX="0" positionY="81" width="128" height="120"/>
+    </elements>
+</model>

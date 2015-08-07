@@ -1,0 +1,4 @@
+
+github "rs/SDWebImage" "master"              # To get the fix for libwebp
+
+github "drmohundro/SWXMLHash" ~> 1.1

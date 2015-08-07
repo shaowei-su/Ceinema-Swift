@@ -1,0 +1,3 @@
+github "Alamofire/Alamofire" "1.3.0"
+github "rs/SDWebImage" "0df58e4995eb1537c19122dade7e06ea9b294b90"
+github "drmohundro/SWXMLHash" "1.1.1"
