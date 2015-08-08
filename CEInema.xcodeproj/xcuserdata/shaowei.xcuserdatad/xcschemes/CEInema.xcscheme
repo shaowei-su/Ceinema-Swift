@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EF296F51B48AF02003F3F44"
-               BuildableName = "CeinemaNew.app"
-               BlueprintName = "CeinemaNew"
-               ReferencedContainer = "container:CeinemaNew.xcodeproj">
+               BuildableName = "CEInema.app"
+               BlueprintName = "CEInema"
+               ReferencedContainer = "container:CEInema.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EF2970A1B48AF02003F3F44"
-               BuildableName = "CeinemaNewTests.xctest"
-               BlueprintName = "CeinemaNewTests"
-               ReferencedContainer = "container:CeinemaNew.xcodeproj">
+               BuildableName = "CEInemaTests.xctest"
+               BlueprintName = "CEInemaTests"
+               ReferencedContainer = "container:CEInema.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9EF2970A1B48AF02003F3F44"
-               BuildableName = "CeinemaNewTests.xctest"
-               BlueprintName = "CeinemaNewTests"
-               ReferencedContainer = "container:CeinemaNew.xcodeproj">
+               BuildableName = "CEInemaTests.xctest"
+               BlueprintName = "CEInemaTests"
+               ReferencedContainer = "container:CEInema.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EF296F51B48AF02003F3F44"
-            BuildableName = "CeinemaNew.app"
-            BlueprintName = "CeinemaNew"
-            ReferencedContainer = "container:CeinemaNew.xcodeproj">
+            BuildableName = "CEInema.app"
+            BlueprintName = "CEInema"
+            ReferencedContainer = "container:CEInema.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EF296F51B48AF02003F3F44"
-            BuildableName = "CeinemaNew.app"
-            BlueprintName = "CeinemaNew"
-            ReferencedContainer = "container:CeinemaNew.xcodeproj">
+            BuildableName = "CEInema.app"
+            BlueprintName = "CEInema"
+            ReferencedContainer = "container:CEInema.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9EF296F51B48AF02003F3F44"
-            BuildableName = "CeinemaNew.app"
-            BlueprintName = "CeinemaNew"
-            ReferencedContainer = "container:CeinemaNew.xcodeproj">
+            BuildableName = "CEInema.app"
+            BlueprintName = "CEInema"
+            ReferencedContainer = "container:CEInema.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

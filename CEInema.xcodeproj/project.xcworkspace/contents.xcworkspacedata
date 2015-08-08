@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CeinemaNew.xcodeproj">
+      location = "self:/Users/shaowei/Ceinema-Swift/CEInema.xcodeproj">
    </FileRef>
 </Workspace>

@@ -77,13 +77,13 @@
 		9EB116741B4C316700462E58 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 		9EBB3EC11B5606F300A35DAC /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 		9ED23F451B49E972001C3764 /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
-		9EF296F61B48AF02003F3F44 /* CeinemaNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CeinemaNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EF296F61B48AF02003F3F44 /* CEInema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CEInema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF296FA1B48AF02003F3F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EF296FB1B48AF02003F3F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EF297001B48AF02003F3F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EF297021B48AF02003F3F44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9EF297051B48AF02003F3F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9EF2970B1B48AF02003F3F44 /* CeinemaNewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeinemaNewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EF2970B1B48AF02003F3F44 /* CEInemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CEInemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF297101B48AF02003F3F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EF297111B48AF02003F3F44 /* CeinemaNewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeinemaNewTests.swift; sourceTree = "<group>"; };
 		9EF2971E1B48CA62003F3F44 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		9EF296F71B48AF02003F3F44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EF296F61B48AF02003F3F44 /* CeinemaNew.app */,
-				9EF2970B1B48AF02003F3F44 /* CeinemaNewTests.xctest */,
+				9EF296F61B48AF02003F3F44 /* CEInema.app */,
+				9EF2970B1B48AF02003F3F44 /* CEInemaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,9 +256,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9EF296F51B48AF02003F3F44 /* CeinemaNew */ = {
+		9EF296F51B48AF02003F3F44 /* CEInema */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EF297151B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CeinemaNew" */;
+			buildConfigurationList = 9EF297151B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CEInema" */;
 			buildPhases = (
 				9EF296F21B48AF02003F3F44 /* Sources */,
 				9EF296F31B48AF02003F3F44 /* Frameworks */,
@@ -269,14 +269,14 @@
 			);
 			dependencies = (
 			);
-			name = CeinemaNew;
+			name = CEInema;
 			productName = CeinemaNew;
-			productReference = 9EF296F61B48AF02003F3F44 /* CeinemaNew.app */;
+			productReference = 9EF296F61B48AF02003F3F44 /* CEInema.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9EF2970A1B48AF02003F3F44 /* CeinemaNewTests */ = {
+		9EF2970A1B48AF02003F3F44 /* CEInemaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EF297181B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CeinemaNewTests" */;
+			buildConfigurationList = 9EF297181B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CEInemaTests" */;
 			buildPhases = (
 				9EF297071B48AF02003F3F44 /* Sources */,
 				9EF297081B48AF02003F3F44 /* Frameworks */,
@@ -287,9 +287,9 @@
 			dependencies = (
 				9EF2970D1B48AF02003F3F44 /* PBXTargetDependency */,
 			);
-			name = CeinemaNewTests;
+			name = CEInemaTests;
 			productName = CeinemaNewTests;
-			productReference = 9EF2970B1B48AF02003F3F44 /* CeinemaNewTests.xctest */;
+			productReference = 9EF2970B1B48AF02003F3F44 /* CEInemaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -303,6 +303,7 @@
 				TargetAttributes = {
 					9EF296F51B48AF02003F3F44 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YR3CFRT5JH;
 					};
 					9EF2970A1B48AF02003F3F44 = {
 						CreatedOnToolsVersion = 6.4;
@@ -310,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9EF296F11B48AF02003F3F44 /* Build configuration list for PBXProject "CeinemaNew" */;
+			buildConfigurationList = 9EF296F11B48AF02003F3F44 /* Build configuration list for PBXProject "CEInema" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -323,8 +324,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EF296F51B48AF02003F3F44 /* CeinemaNew */,
-				9EF2970A1B48AF02003F3F44 /* CeinemaNewTests */,
+				9EF296F51B48AF02003F3F44 /* CEInema */,
+				9EF2970A1B48AF02003F3F44 /* CEInemaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,7 +403,7 @@
 /* Begin PBXTargetDependency section */
 		9EF2970D1B48AF02003F3F44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9EF296F51B48AF02003F3F44 /* CeinemaNew */;
+			target = 9EF296F51B48AF02003F3F44 /* CEInema */;
 			targetProxy = 9EF2970C1B48AF02003F3F44 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -515,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hung Le (4G2YG3WJBF)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -527,7 +529,8 @@
 					"$(PROJECT_DIR)/CeinemaNew",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CEInema;
+				PROVISIONING_PROFILE = "9ee89e3b-f5e4-4470-a998-420ed5c14318";
 				SWIFT_OBJC_BRIDGING_HEADER = "CeinemaNew/CeinemaNew-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -538,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hung Le (4G2YG3WJBF)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -550,7 +554,8 @@
 					"$(PROJECT_DIR)/CeinemaNew",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CEInema;
+				PROVISIONING_PROFILE = "9ee89e3b-f5e4-4470-a998-420ed5c14318";
 				SWIFT_OBJC_BRIDGING_HEADER = "CeinemaNew/CeinemaNew-Bridging-Header.h";
 			};
 			name = Release;
@@ -569,8 +574,8 @@
 				);
 				INFOPLIST_FILE = CeinemaNewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CeinemaNew.app/CeinemaNew";
+				PRODUCT_NAME = CEInemaTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CEInema.app/CEInema";
 			};
 			name = Debug;
 		};
@@ -584,15 +589,15 @@
 				);
 				INFOPLIST_FILE = CeinemaNewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CeinemaNew.app/CeinemaNew";
+				PRODUCT_NAME = CEInemaTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CEInema.app/CEInema";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9EF296F11B48AF02003F3F44 /* Build configuration list for PBXProject "CeinemaNew" */ = {
+		9EF296F11B48AF02003F3F44 /* Build configuration list for PBXProject "CEInema" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EF297131B48AF02003F3F44 /* Debug */,
@@ -601,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EF297151B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CeinemaNew" */ = {
+		9EF297151B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CEInema" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EF297161B48AF02003F3F44 /* Debug */,
@@ -610,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EF297181B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CeinemaNewTests" */ = {
+		9EF297181B48AF02003F3F44 /* Build configuration list for PBXNativeTarget "CEInemaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EF297191B48AF02003F3F44 /* Debug */,
