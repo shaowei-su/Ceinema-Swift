@@ -234,7 +234,15 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             var stringMatchTitle: Range<String.Index>?
             var stringMatchPresenterFirstName: Range<String.Index>?
             for i in 0..<searchTextModified.count {
+                if stringMatchTitle != nil {
+                    break
+                }
                 stringMatchTitle = searchTitle.lowercaseString.rangeOfString(searchTextModified[i])
+            }
+            for i in 0..<searchTextModified.count {
+                if stringMatchPresenterFirstName != nil {
+                    break
+                }
                 stringMatchPresenterFirstName = searchPresenterFirstName.lowercaseString.rangeOfString(searchTextModified[i])
             }
             return (stringMatchTitle != nil || stringMatchPresenterFirstName != nil)
