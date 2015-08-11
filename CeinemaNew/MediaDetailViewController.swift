@@ -112,7 +112,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         fetchUrl = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=iGetSingleMedium&mediaID=%@", mediaID) as String
         xmlData = NSData(contentsOfURL: NSURL(string: fetchUrl)!)!
         xmlParsed = SWXMLHash.parse(xmlData!)
-        
+
         if let mediaTitleRead = xmlParsed!["data"]["row"]["title"].element?.text {
             mediaTitle = mediaTitleRead
             mediaDetailTitle.text = mediaTitleRead

@@ -16,7 +16,6 @@
 		9E6E88FB1B6FB92700D312A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E88FA1B6FB92700D312A5 /* SystemConfiguration.framework */; };
 		9E6E88FD1B6FB93000D312A5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E88FC1B6FB93000D312A5 /* libz.dylib */; };
 		9E6E89011B6FC13100D312A5 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E89001B6FC13100D312A5 /* libAdIdAccess.a */; };
-		9E7059861B5451D80041517C /* SimulationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7059851B5451D80041517C /* SimulationTools.swift */; };
 		9E7059881B5452B80041517C /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7059871B5452B80041517C /* ToolsTableViewController.swift */; };
 		9E70598A1B5495C10041517C /* ToolsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7059891B5495C10041517C /* ToolsTableViewCell.swift */; };
 		9E70598C1B549C710041517C /* ToolsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E70598B1B549C710041517C /* ToolsWebViewController.swift */; };
@@ -67,7 +66,6 @@
 		9E6E88FA1B6FB92700D312A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9E6E88FC1B6FB93000D312A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9E6E89001B6FC13100D312A5 /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = SOURCE_ROOT; };
-		9E7059851B5451D80041517C /* SimulationTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationTools.swift; sourceTree = "<group>"; };
 		9E7059871B5452B80041517C /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		9E7059891B5495C10041517C /* ToolsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewCell.swift; sourceTree = "<group>"; };
 		9E70598B1B549C710041517C /* ToolsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsWebViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				9E7059891B5495C10041517C /* ToolsTableViewCell.swift */,
-				9E7059851B5451D80041517C /* SimulationTools.swift */,
 				9E7059871B5452B80041517C /* ToolsTableViewController.swift */,
 				9E70598B1B549C710041517C /* ToolsWebViewController.swift */,
 			);
@@ -381,7 +378,6 @@
 				9EB116761B4C316700462E58 /* AllTableViewCell.swift in Sources */,
 				9EF297211B48CC92003F3F44 /* WebViewController.swift in Sources */,
 				9EF2971F1B48CA62003F3F44 /* HomeViewController.swift in Sources */,
-				9E7059861B5451D80041517C /* SimulationTools.swift in Sources */,
 				9E6A6A1A1B5C378B00032BD4 /* CeinemaNew.xcdatamodeld in Sources */,
 				9E3602EB1B6419A900AE8C8A /* MBProgressHUD.m in Sources */,
 				9E7059881B5452B80041517C /* ToolsTableViewController.swift in Sources */,
