@@ -8,13 +8,13 @@
         <!--Saved-->
         <scene sceneID="pEo-yx-r24">
             <objects>
-                <tableViewController id="zFO-oz-o0h" customClass="SavedTableViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zFO-oz-o0h" customClass="SavedTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" id="fS7-PA-x1d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SavedCell" rowHeight="93" id="CT2-uQ-HBS" userLabel="SavedCell" customClass="AllTableViewCell" customModule="CeinemaNew" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SavedCell" rowHeight="93" id="CT2-uQ-HBS" userLabel="SavedCell" customClass="AllTableViewCell" customModule="CEInema" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CT2-uQ-HBS" id="QLN-38-2CT">
@@ -100,7 +100,7 @@
         <!--Ceinema-->
         <scene sceneID="NyE-4q-bqS">
             <objects>
-                <viewController id="I3r-8H-eqV" customClass="HomeViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I3r-8H-eqV" customClass="HomeViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H6A-Kl-0mr"/>
                         <viewControllerLayoutGuide type="bottom" id="CCu-0w-Yva"/>
@@ -187,7 +187,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         </connections>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="avY-Pd-sFC">
-                                        <rect key="frame" x="264" y="154" width="71" height="37"/>
+                                        <rect key="frame" x="264" y="174" width="71" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
@@ -214,7 +214,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <constraint firstItem="WOe-vN-UTj" firstAttribute="top" secondItem="GWc-Vl-KX8" secondAttribute="bottom" constant="10" id="rx5-9c-YD3"/>
                                     <constraint firstItem="GWc-Vl-KX8" firstAttribute="leading" secondItem="2nA-vs-2j3" secondAttribute="leading" constant="8" id="wNo-Y2-r6E"/>
                                     <constraint firstItem="lEa-fg-gIn" firstAttribute="top" secondItem="I27-3u-WSf" secondAttribute="bottom" constant="20" id="xTu-tu-QPp"/>
-                                    <constraint firstItem="avY-Pd-sFC" firstAttribute="top" secondItem="GWc-Vl-KX8" secondAttribute="bottom" constant="-45" id="zOQ-KD-81v"/>
+                                    <constraint firstItem="avY-Pd-sFC" firstAttribute="top" secondItem="GWc-Vl-KX8" secondAttribute="bottom" constant="-25" id="zOQ-KD-81v"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -240,7 +240,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--Web View Controller-->
         <scene sceneID="qYD-S0-khh">
             <objects>
-                <viewController id="Fq8-Zq-wL2" customClass="WebViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fq8-Zq-wL2" customClass="WebViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tLt-lH-hLb"/>
                         <viewControllerLayoutGuide type="bottom" id="HIT-xF-gi7"/>
@@ -274,7 +274,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--Media Detail View Controller-->
         <scene sceneID="uK4-c6-10m">
             <objects>
-                <viewController id="jQx-pP-CJJ" customClass="MediaDetailViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jQx-pP-CJJ" customClass="MediaDetailViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yWU-VN-oDD"/>
                         <viewControllerLayoutGuide type="bottom" id="FJt-jd-ulb"/>
@@ -464,7 +464,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--Tools Web View Controller-->
         <scene sceneID="xmq-lq-0n2">
             <objects>
-                <viewController id="BH5-zZ-TTE" customClass="ToolsWebViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BH5-zZ-TTE" customClass="ToolsWebViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GLj-Ss-IFu"/>
                         <viewControllerLayoutGuide type="bottom" id="gMA-2r-Msg"/>
@@ -537,7 +537,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--All-->
         <scene sceneID="5hc-6b-5s9">
             <objects>
-                <tableViewController id="8KS-xm-ZLI" customClass="AllTableViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8KS-xm-ZLI" customClass="AllTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" id="c73-Nt-Jln">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -551,7 +551,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="ioj-CS-N4D" customClass="AllTableViewCell" customModule="CeinemaNew" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="ioj-CS-N4D" customClass="AllTableViewCell" customModule="CEInema" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ioj-CS-N4D" id="yzW-7j-wEQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -709,13 +709,13 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--Simulation Tools-->
         <scene sceneID="mSf-ZM-pQT">
             <objects>
-                <tableViewController id="SG5-DS-GbI" customClass="ToolsTableViewController" customModule="CeinemaNew" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="SG5-DS-GbI" customClass="ToolsTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" id="MPq-h5-1xk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ToolCell" rowHeight="91" id="QN7-07-NIE" customClass="ToolsTableViewCell" customModule="CeinemaNew" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ToolCell" rowHeight="91" id="QN7-07-NIE" customClass="ToolsTableViewCell" customModule="CEInema" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QN7-07-NIE" id="xaK-fB-oEm">
                                     <autoresizingMask key="autoresizingMask"/>

@@ -50,10 +50,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
         // load images into the an array
         pageImages = [UIImage(named:"rsz_cei_logo_redesign-final2013")!,
-            UIImage(named:"CSA_Among_STI_Clinic_Patients_high")!,
-            UIImage(named:"HIV_Sexual_Networks_Transmit_and_Resist_high")!,
-            UIImage(named:"Towards_HIV_Cure_Real_Progress_Real_Problems_high")!,
-            UIImage(named:"Update_on_Kidney_in_HIV_Treat_and_Prevent_high")!]
+            UIImage(named:"cei-line.fw")!,
+            UIImage(named:"case-simulation-tools.fw")!,
+            UIImage(named:"subscribe.fw")!]
         
         let pageCount = pageImages.count
         
