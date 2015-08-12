@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:UIFont(name: "AvenirNextCondensed-DemiBold", size: 22.0)!]
-        
+        UINavigationController
         // Change status bar style
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         

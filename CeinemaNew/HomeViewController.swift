@@ -93,6 +93,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             newPageView.layer.cornerRadius = 5.0;
             pageScrollView.addSubview(newPageView)
             
+            let singleTap = UITapGestureRecognizer(target: self, action: Selector("tapDetected"))
+            singleTap.numberOfTapsRequired = 1
+            newPageView.userInteractionEnabled = true
+            newPageView.addGestureRecognizer(singleTap)
+            
             pageViews[page] = newPageView
         }
     }
@@ -163,5 +168,20 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         pageScrollView.contentSize = CGSizeMake(pageWidth! * CGFloat(pageImages.count), pageHeight!)
         pageScrollView.contentOffset.x = 0
         loadVisiblePages()
+    }
+    
+    func tapDetected() {
+        let pageCurrent = pageControl.currentPage
+        switch pageCurrent {
+            case 1:
+                let phone = "tel://8666372342"
+                let urlPhone: NSURL = NSURL(string: phone)!
+                UIApplication.sharedApplication().openURL(urlPhone)
+            case 2:
+                performSegueWithIdentifier("homeToToolSegue", sender: nil)
+            default:
+                println("Single Tap on imageview at \(pageCurrent)")
+        }
+        
     }
 }

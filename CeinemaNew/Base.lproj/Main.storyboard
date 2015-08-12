@@ -231,6 +231,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                         <outlet property="pageControl" destination="avY-Pd-sFC" id="bmK-iN-KHG"/>
                         <outlet property="pageScrollView" destination="GWc-Vl-KX8" id="cQs-i2-meN"/>
                         <outlet property="visitHomeButton" destination="MIZ-SL-Ard" id="bOU-5N-uO7"/>
+                        <segue destination="SG5-DS-GbI" kind="show" identifier="homeToToolSegue" id="uEs-g8-PNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kv-DZ-Qbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,10 +408,12 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <constraint firstItem="9Ka-3i-ee4" firstAttribute="top" secondItem="YNR-P2-EKg" secondAttribute="top" id="rmf-v7-Q0S"/>
                                     <constraint firstItem="ynY-v9-qSm" firstAttribute="leading" secondItem="YNR-P2-EKg" secondAttribute="leading" constant="20" id="tTl-6h-B3N"/>
                                     <constraint firstItem="ynY-v9-qSm" firstAttribute="leading" secondItem="8kW-NK-wy5" secondAttribute="leading" id="vPO-2N-DpJ"/>
+                                    <constraint firstItem="9Ka-3i-ee4" firstAttribute="top" secondItem="YNR-P2-EKg" secondAttribute="top" id="w1G-pZ-TAd"/>
                                     <constraint firstAttribute="trailing" secondItem="nLv-qt-FLx" secondAttribute="trailing" constant="20" id="xnQ-Zl-31W"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="rmf-v7-Q0S"/>
                                         <exclude reference="WtG-xr-ls2"/>
                                     </mask>
                                 </variation>
@@ -815,6 +818,164 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="1953" y="-342"/>
         </scene>
+        <!--Login Controller-->
+        <scene sceneID="HXF-BF-EZL">
+            <objects>
+                <viewController storyboardIdentifier="loginController" id="eKw-Kc-Yp8" customClass="LoginController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dtn-wQ-8GU"/>
+                        <viewControllerLayoutGuide type="bottom" id="eCt-ho-TEO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RBq-ta-0L1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name(optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pP5-Vs-rb1" userLabel="Name">
+                                <rect key="frame" x="36" y="333" width="528" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="9si-pi-aWc"/>
+                                    <constraint firstAttribute="height" constant="30" id="eBc-bs-ovR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9si-pi-aWc"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N58-B5-1lR" userLabel="Email Address">
+                                <rect key="frame" x="36" y="381" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKk-Rh-5rJ" userLabel="Confirm">
+                                <rect key="frame" x="36" y="433" width="254" height="40"/>
+                                <color key="backgroundColor" red="0.35410979279999999" green="0.67008974460000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QQt-p1-rRd"/>
+                                    <constraint firstAttribute="width" constant="180" id="baz-ua-KDw"/>
+                                </constraints>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="baz-ua-KDw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="userLogin:" destination="eKw-Kc-Yp8" eventType="touchUpInside" id="Cev-pB-8wf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7p-GJ-hqE" userLabel="Cancel">
+                                <rect key="frame" x="310" y="433" width="254" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="d2M-qu-DTc"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="d2M-qu-DTc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="regAction:" destination="eKw-Kc-Yp8" eventType="touchUpInside" id="F7i-rO-TMW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEI sends email newsletters from time to time (typically once every 2-3 weeks) on:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF1-Oc-Gqp">
+                                <rect key="frame" x="24" y="20" width="552" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Latest developments in clinical care for HIV, hepatitis C and other sexually transmitted infections" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-md-6gM">
+                                <rect key="frame" x="47" y="93" width="506" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Continuing medical education events throughout New York State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-kk-HUr">
+                                <rect key="frame" x="47" y="179" width="507" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Other learning resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGK-eg-omK">
+                                <rect key="frame" x="47" y="212" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• New CE courses &amp; learning modules" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yiq-Co-26m">
+                                <rect key="frame" x="47" y="146" width="291" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SLe-md-6gM" firstAttribute="top" secondItem="HF1-Oc-Gqp" secondAttribute="bottom" constant="32" id="0WG-8A-dcb"/>
+                            <constraint firstItem="L7p-GJ-hqE" firstAttribute="trailing" secondItem="N58-B5-1lR" secondAttribute="trailing" id="6vr-ru-x6T"/>
+                            <constraint firstItem="oGK-eg-omK" firstAttribute="top" secondItem="FBQ-kk-HUr" secondAttribute="bottom" constant="12" id="834-nY-GBk"/>
+                            <constraint firstItem="N58-B5-1lR" firstAttribute="trailing" secondItem="pP5-Vs-rb1" secondAttribute="trailing" id="87N-yr-GuX"/>
+                            <constraint firstItem="JKk-Rh-5rJ" firstAttribute="baseline" secondItem="L7p-GJ-hqE" secondAttribute="baseline" id="8XU-VV-32d"/>
+                            <constraint firstItem="N58-B5-1lR" firstAttribute="leading" secondItem="RBq-ta-0L1" secondAttribute="leadingMargin" constant="20" id="9oA-W6-yy0"/>
+                            <constraint firstItem="pP5-Vs-rb1" firstAttribute="top" secondItem="oGK-eg-omK" secondAttribute="bottom" constant="100" id="Ccy-zb-6my"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L7p-GJ-hqE" secondAttribute="trailing" constant="20" id="DLz-gs-gsX"/>
+                            <constraint firstItem="pP5-Vs-rb1" firstAttribute="top" secondItem="HF1-Oc-Gqp" secondAttribute="bottom" constant="300" id="Ddt-hJ-hKo"/>
+                            <constraint firstItem="JKk-Rh-5rJ" firstAttribute="leading" secondItem="N58-B5-1lR" secondAttribute="leading" id="Gso-mJ-MBZ"/>
+                            <constraint firstAttribute="centerX" secondItem="HF1-Oc-Gqp" secondAttribute="centerX" id="Iwa-Xg-LSs"/>
+                            <constraint firstItem="pP5-Vs-rb1" firstAttribute="centerX" secondItem="RBq-ta-0L1" secondAttribute="centerX" id="Lx2-VM-yK0"/>
+                            <constraint firstItem="N58-B5-1lR" firstAttribute="height" secondItem="pP5-Vs-rb1" secondAttribute="height" id="My4-Q9-hQd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N58-B5-1lR" secondAttribute="trailing" constant="20" id="S0y-gw-bwf"/>
+                            <constraint firstItem="HF1-Oc-Gqp" firstAttribute="top" secondItem="dtn-wQ-8GU" secondAttribute="bottom" id="TNz-aT-H29"/>
+                            <constraint firstItem="HF1-Oc-Gqp" firstAttribute="leading" secondItem="RBq-ta-0L1" secondAttribute="leadingMargin" constant="8" id="TYo-CO-st3"/>
+                            <constraint firstItem="N58-B5-1lR" firstAttribute="top" secondItem="pP5-Vs-rb1" secondAttribute="bottom" constant="18" id="Wlp-xd-yCS"/>
+                            <constraint firstItem="JKk-Rh-5rJ" firstAttribute="height" secondItem="L7p-GJ-hqE" secondAttribute="height" id="WzZ-MK-6V9"/>
+                            <constraint firstItem="JKk-Rh-5rJ" firstAttribute="width" secondItem="L7p-GJ-hqE" secondAttribute="width" id="cUF-R9-y7P"/>
+                            <constraint firstItem="FBQ-kk-HUr" firstAttribute="top" secondItem="Yiq-Co-26m" secondAttribute="bottom" constant="12" id="eAh-0T-jhW"/>
+                            <constraint firstItem="SLe-md-6gM" firstAttribute="leading" secondItem="RBq-ta-0L1" secondAttribute="leadingMargin" constant="31" id="f6u-sB-RPt"/>
+                            <constraint firstItem="N58-B5-1lR" firstAttribute="leading" secondItem="pP5-Vs-rb1" secondAttribute="leading" id="gSH-yi-qNB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HF1-Oc-Gqp" secondAttribute="trailing" constant="8" id="gse-nS-umC"/>
+                            <constraint firstItem="FBQ-kk-HUr" firstAttribute="leading" secondItem="oGK-eg-omK" secondAttribute="leading" id="i95-He-10c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pP5-Vs-rb1" secondAttribute="trailing" constant="20" id="j5r-WQ-nhW"/>
+                            <constraint firstItem="L7p-GJ-hqE" firstAttribute="leading" secondItem="JKk-Rh-5rJ" secondAttribute="trailing" constant="20" id="lTD-Sf-qmO"/>
+                            <constraint firstItem="Yiq-Co-26m" firstAttribute="top" secondItem="SLe-md-6gM" secondAttribute="bottom" constant="12" id="lhA-Bu-hFt"/>
+                            <constraint firstItem="pP5-Vs-rb1" firstAttribute="leading" secondItem="RBq-ta-0L1" secondAttribute="leadingMargin" constant="20" id="o8J-lt-GTX"/>
+                            <constraint firstItem="pP5-Vs-rb1" firstAttribute="top" secondItem="dtn-wQ-8GU" secondAttribute="bottom" constant="20" id="ps4-bE-adw"/>
+                            <constraint firstItem="L7p-GJ-hqE" firstAttribute="leading" secondItem="JKk-Rh-5rJ" secondAttribute="trailing" constant="20" id="rhU-EF-s2u"/>
+                            <constraint firstAttribute="centerX" secondItem="SLe-md-6gM" secondAttribute="centerX" id="s8W-bp-NRP"/>
+                            <constraint firstItem="SLe-md-6gM" firstAttribute="leading" secondItem="Yiq-Co-26m" secondAttribute="leading" id="sIK-Jw-YAE"/>
+                            <constraint firstItem="FBQ-kk-HUr" firstAttribute="leading" secondItem="Yiq-Co-26m" secondAttribute="leading" id="sOv-0K-VXE"/>
+                            <constraint firstItem="L7p-GJ-hqE" firstAttribute="top" secondItem="N58-B5-1lR" secondAttribute="bottom" constant="22" id="v9u-Qs-sYk"/>
+                            <constraint firstItem="JKk-Rh-5rJ" firstAttribute="top" secondItem="N58-B5-1lR" secondAttribute="bottom" constant="22" id="ylm-4e-Lxv"/>
+                            <constraint firstItem="L7p-GJ-hqE" firstAttribute="top" secondItem="N58-B5-1lR" secondAttribute="bottom" constant="22" id="yxc-8P-U0R"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ddt-hJ-hKo"/>
+                                <exclude reference="ps4-bE-adw"/>
+                                <exclude reference="6vr-ru-x6T"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="JKk-Rh-5rJ" id="BJ4-s2-Oxl"/>
+                        <outlet property="password" destination="N58-B5-1lR" id="WWS-5s-eZy"/>
+                        <outlet property="username" destination="pP5-Vs-rb1" id="qDU-EK-sTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hk8-Bd-tmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="-1689"/>
+        </scene>
     </scenes>
     <resources>
         <image name="folder30png" width="30" height="30"/>
@@ -826,5 +987,6 @@ Persons using this website and application agree to indemnify and hold harmless 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7Sb-W5-Jdo"/>
+        <segue reference="uEs-g8-PNT"/>
     </inferredMetricsTieBreakers>
 </document>
