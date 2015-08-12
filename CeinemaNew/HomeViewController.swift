@@ -179,6 +179,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 UIApplication.sharedApplication().openURL(urlPhone)
             case 2:
                 performSegueWithIdentifier("homeToToolSegue", sender: nil)
+            case 3:
+                performSegueWithIdentifier("homeToSignupSegue", sender: nil)
             default:
                 println("Single Tap on imageview at \(pageCurrent)")
         }
