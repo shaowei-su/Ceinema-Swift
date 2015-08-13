@@ -109,7 +109,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     func beginParsing() {
         mediaID = mediaID.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         mediaID = mediaID.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
-        fetchUrl = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=iGetSingleMedium&mediaID=%@", mediaID) as String
+        fetchUrl = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=iosGetSingleMedium&mediaID=%@", mediaID) as String
         xmlData = NSData(contentsOfURL: NSURL(string: fetchUrl)!)!
         xmlParsed = SWXMLHash.parse(xmlData!)
 

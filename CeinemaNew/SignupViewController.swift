@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var SignupName: UITextField!
-    @IBOutlet weak var SignupEmail: UITextField!
+    @IBOutlet weak var SignupName: UITextField! { didSet { SignupName.delegate = self } }
+    @IBOutlet weak var SignupEmail: UITextField! { didSet { SignupEmail.delegate = self } }
 
     @IBAction func ConfirmButton(sender: AnyObject) {
         confirm()
@@ -51,6 +51,11 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }

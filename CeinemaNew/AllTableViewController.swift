@@ -83,7 +83,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
 
     func beginParsing() {
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://ceitraining.org/web_services/media.cfc?method=iGetMedia&sortBy=media_date_released&sortByOrder=DESC")))!
+        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://ceitraining.org/web_services/media.cfc?method=iosGetMedia&sortBy=media_date_released&sortByOrder=DESC")))!
         parser.delegate = self
         parser.parse()
     }
