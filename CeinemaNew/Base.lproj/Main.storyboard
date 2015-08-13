@@ -822,7 +822,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <!--Signup-->
         <scene sceneID="iTk-dp-aqU">
             <objects>
-                <viewController id="mUy-GO-XEA" userLabel="Signup" sceneMemberID="viewController">
+                <viewController id="mUy-GO-XEA" userLabel="Signup" customClass="SignupViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="urG-4b-nEt"/>
                         <viewControllerLayoutGuide type="bottom" id="yUB-82-g7O"/>
@@ -838,7 +838,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name(optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-9g-sI9" userLabel="Name">
-                                                <rect key="frame" x="28" y="299" width="544" height="30"/>
+                                                <rect key="frame" x="28" y="240" width="544" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="400" id="ofV-Hz-bdJ"/>
                                                     <constraint firstAttribute="height" constant="30" id="vaM-7r-BsS"/>
@@ -852,12 +852,12 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                 </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HC6-kb-WsS" userLabel="Email Address">
-                                                <rect key="frame" x="28" y="347" width="544" height="30"/>
+                                                <rect key="frame" x="28" y="288" width="544" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCG-Z0-dn2" userLabel="Confirm">
-                                                <rect key="frame" x="28" y="399" width="262" height="40"/>
+                                                <rect key="frame" x="28" y="340" width="262" height="40"/>
                                                 <color key="backgroundColor" red="0.35410979279999999" green="0.67008974460000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="XoA-Vv-Bfa"/>
@@ -872,9 +872,12 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                         <exclude reference="pjq-7y-nS1"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="ConfirmButton:" destination="mUy-GO-XEA" eventType="touchUpInside" id="Lfq-m6-608"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Moz-Az-5jh" userLabel="Cancel">
-                                                <rect key="frame" x="310" y="399" width="262" height="40"/>
+                                                <rect key="frame" x="310" y="340" width="262" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="D9F-Va-Qel"/>
@@ -888,33 +891,36 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                         <exclude reference="D9F-Va-Qel"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="CancelButton:" destination="mUy-GO-XEA" eventType="touchUpInside" id="JUK-vt-4jg"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEI sends email newsletters from time to time (typically once every 2-3 weeks) on:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmv-NU-eW5">
-                                                <rect key="frame" x="16" y="74" width="568" height="41"/>
+                                                <rect key="frame" x="16" y="15" width="568" height="41"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Latest developments in clinical care for HIV, hepatitis C and other sexually transmitted infections" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvG-FN-ad2">
-                                                <rect key="frame" x="39" y="130" width="522" height="41"/>
+                                                <rect key="frame" x="39" y="71" width="522" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Continuing medical education events throughout New York State" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-gU-PX0">
-                                                <rect key="frame" x="39" y="202" width="523" height="21"/>
+                                                <rect key="frame" x="39" y="143" width="523" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Other learning resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-tt-ucS">
-                                                <rect key="frame" x="39" y="228" width="200" height="21"/>
+                                                <rect key="frame" x="39" y="169" width="200" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• New CE courses &amp; learning modules" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfQ-38-RNQ">
-                                                <rect key="frame" x="39" y="176" width="523" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• New CE courses &amp; learning modules" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfQ-38-RNQ">
+                                                <rect key="frame" x="39" y="117" width="523" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -927,8 +933,8 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <constraint firstItem="QCG-Z0-dn2" firstAttribute="height" secondItem="Moz-Az-5jh" secondAttribute="height" id="99E-c9-4E6"/>
                                             <constraint firstItem="bWI-9g-sI9" firstAttribute="leading" secondItem="lMx-Zc-bNk" secondAttribute="leadingMargin" constant="20" id="9BK-dX-DJH"/>
                                             <constraint firstItem="dmv-NU-eW5" firstAttribute="leading" secondItem="lMx-Zc-bNk" secondAttribute="leadingMargin" constant="8" id="9HT-Hk-bu8"/>
+                                            <constraint firstItem="bSl-gU-PX0" firstAttribute="trailing" secondItem="WfQ-38-RNQ" secondAttribute="trailing" id="ACX-in-MzK"/>
                                             <constraint firstItem="HC6-kb-WsS" firstAttribute="top" secondItem="bWI-9g-sI9" secondAttribute="bottom" constant="18" id="Blv-GZ-NB1"/>
-                                            <constraint firstAttribute="width" constant="600" id="FPc-pA-6ug"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Moz-Az-5jh" secondAttribute="trailing" constant="20" id="FeR-vB-k7k"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="bWI-9g-sI9" secondAttribute="trailing" constant="20" id="Hig-FV-Ubx"/>
                                             <constraint firstItem="QCG-Z0-dn2" firstAttribute="top" secondItem="HC6-kb-WsS" secondAttribute="bottom" constant="22" id="Kon-md-P5s"/>
@@ -936,14 +942,11 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <constraint firstItem="bWI-9g-sI9" firstAttribute="top" secondItem="xcz-tt-ucS" secondAttribute="bottom" constant="50" id="MkQ-1g-cPE"/>
                                             <constraint firstItem="bWI-9g-sI9" firstAttribute="centerX" secondItem="lMx-Zc-bNk" secondAttribute="centerX" id="ONA-mg-FMB"/>
                                             <constraint firstItem="QCG-Z0-dn2" firstAttribute="leading" secondItem="HC6-kb-WsS" secondAttribute="leading" id="Pg6-CG-Eq1"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="bSl-gU-PX0" secondAttribute="trailing" constant="30" id="RU9-KD-00a"/>
                                             <constraint firstItem="KvG-FN-ad2" firstAttribute="leading" secondItem="WfQ-38-RNQ" secondAttribute="leading" id="SiF-3A-uah"/>
-                                            <constraint firstAttribute="bottom" secondItem="QCG-Z0-dn2" secondAttribute="bottom" constant="161" id="U6c-7U-LZF"/>
                                             <constraint firstItem="Moz-Az-5jh" firstAttribute="top" secondItem="HC6-kb-WsS" secondAttribute="bottom" constant="22" id="V9A-EN-uvO"/>
                                             <constraint firstItem="QCG-Z0-dn2" firstAttribute="width" secondItem="Moz-Az-5jh" secondAttribute="width" id="WK3-FD-sVp"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="KvG-FN-ad2" secondAttribute="trailing" constant="31" id="Y8l-d6-oTY"/>
                                             <constraint firstItem="bSl-gU-PX0" firstAttribute="leading" secondItem="WfQ-38-RNQ" secondAttribute="leading" id="ZrT-XA-gl5"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="WfQ-38-RNQ" secondAttribute="trailing" constant="30" id="abX-eI-5IZ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="dmv-NU-eW5" secondAttribute="trailing" constant="8" id="cNb-5O-t4Z"/>
                                             <constraint firstItem="HC6-kb-WsS" firstAttribute="leading" secondItem="lMx-Zc-bNk" secondAttribute="leadingMargin" constant="20" id="dJ5-Dc-5Qp"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="HC6-kb-WsS" secondAttribute="trailing" constant="20" id="dK8-Op-jVq"/>
@@ -951,7 +954,8 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <constraint firstItem="Moz-Az-5jh" firstAttribute="leading" secondItem="QCG-Z0-dn2" secondAttribute="trailing" constant="20" id="eh1-xq-FO9"/>
                                             <constraint firstItem="QCG-Z0-dn2" firstAttribute="baseline" secondItem="Moz-Az-5jh" secondAttribute="baseline" id="g6q-vh-9lS"/>
                                             <constraint firstItem="bSl-gU-PX0" firstAttribute="leading" secondItem="xcz-tt-ucS" secondAttribute="leading" id="g84-yp-mJe"/>
-                                            <constraint firstItem="dmv-NU-eW5" firstAttribute="top" secondItem="lMx-Zc-bNk" secondAttribute="top" constant="74" id="i8h-Ye-Wxr"/>
+                                            <constraint firstItem="dmv-NU-eW5" firstAttribute="top" secondItem="lMx-Zc-bNk" secondAttribute="top" constant="15" id="i8h-Ye-Wxr"/>
+                                            <constraint firstItem="WfQ-38-RNQ" firstAttribute="trailing" secondItem="KvG-FN-ad2" secondAttribute="trailing" constant="1" id="jYo-Al-svr"/>
                                             <constraint firstItem="KvG-FN-ad2" firstAttribute="top" secondItem="dmv-NU-eW5" secondAttribute="bottom" constant="15" id="jdH-1G-ioY"/>
                                             <constraint firstItem="KvG-FN-ad2" firstAttribute="leading" secondItem="lMx-Zc-bNk" secondAttribute="leadingMargin" constant="31" id="m4C-QJ-5UK"/>
                                             <constraint firstItem="Moz-Az-5jh" firstAttribute="leading" secondItem="QCG-Z0-dn2" secondAttribute="trailing" constant="20" id="oku-ph-D9J"/>
@@ -964,7 +968,9 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="lMx-Zc-bNk" secondAttribute="centerX" id="75z-e5-Ht9"/>
                                     <constraint firstItem="lMx-Zc-bNk" firstAttribute="top" secondItem="jcI-fp-Q7W" secondAttribute="top" id="9BO-gd-69L"/>
+                                    <constraint firstAttribute="centerY" secondItem="lMx-Zc-bNk" secondAttribute="centerY" id="ABn-e9-MZz"/>
                                     <constraint firstAttribute="bottom" secondItem="lMx-Zc-bNk" secondAttribute="bottom" id="B7R-6g-gw7"/>
                                     <constraint firstItem="lMx-Zc-bNk" firstAttribute="leading" secondItem="jcI-fp-Q7W" secondAttribute="leading" id="XTE-6O-AQD"/>
                                     <constraint firstAttribute="trailing" secondItem="lMx-Zc-bNk" secondAttribute="trailing" id="ipe-2t-g3c"/>
@@ -981,6 +987,10 @@ Persons using this website and application agree to indemnify and hold harmless 
                             <constraint firstItem="jcI-fp-Q7W" firstAttribute="leading" secondItem="qoe-Wl-vkF" secondAttribute="leading" id="rTn-zD-Qk6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SignupEmail" destination="HC6-kb-WsS" id="U9R-J8-zgy"/>
+                        <outlet property="SignupName" destination="bWI-9g-sI9" id="7ln-TG-RU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olk-x8-oYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

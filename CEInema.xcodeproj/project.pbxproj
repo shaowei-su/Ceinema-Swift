@@ -25,6 +25,7 @@
 		9EB116761B4C316700462E58 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB116741B4C316700462E58 /* AllTableViewCell.swift */; };
 		9EBB3EC21B5606F300A35DAC /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBB3EC11B5606F300A35DAC /* SWXMLHash.framework */; };
 		9ED23F461B49E972001C3764 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED23F451B49E972001C3764 /* AllTableViewController.swift */; };
+		9EEB88381B7C38C5003170D0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB88371B7C38C5003170D0 /* SignupViewController.swift */; };
 		9EF296FC1B48AF02003F3F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF296FB1B48AF02003F3F44 /* AppDelegate.swift */; };
 		9EF297011B48AF02003F3F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF296FF1B48AF02003F3F44 /* Main.storyboard */; };
 		9EF297031B48AF02003F3F44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EF297021B48AF02003F3F44 /* Images.xcassets */; };
@@ -75,6 +76,7 @@
 		9EB116741B4C316700462E58 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 		9EBB3EC11B5606F300A35DAC /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 		9ED23F451B49E972001C3764 /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
+		9EEB88371B7C38C5003170D0 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		9EF296F61B48AF02003F3F44 /* CEInema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CEInema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF296FA1B48AF02003F3F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EF296FB1B48AF02003F3F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				9EF2971E1B48CA62003F3F44 /* HomeViewController.swift */,
+				9EEB88371B7C38C5003170D0 /* SignupViewController.swift */,
 				9EF297201B48CC92003F3F44 /* WebViewController.swift */,
 			);
 			name = Home;
@@ -380,6 +383,7 @@
 				9EF2971F1B48CA62003F3F44 /* HomeViewController.swift in Sources */,
 				9E6A6A1A1B5C378B00032BD4 /* CeinemaNew.xcdatamodeld in Sources */,
 				9E3602EB1B6419A900AE8C8A /* MBProgressHUD.m in Sources */,
+				9EEB88381B7C38C5003170D0 /* SignupViewController.swift in Sources */,
 				9E7059881B5452B80041517C /* ToolsTableViewController.swift in Sources */,
 				9EA10D091B530E32005E1783 /* MediaDetailViewController.swift in Sources */,
 				9E70598A1B5495C10041517C /* ToolsTableViewCell.swift in Sources */,
