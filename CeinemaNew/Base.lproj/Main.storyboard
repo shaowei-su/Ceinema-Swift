@@ -459,6 +459,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                         <outlet property="presenterEmpLabel" destination="kIo-gM-iIT" id="qED-xr-bpX"/>
                         <outlet property="presenterNameLabel" destination="8kW-NK-wy5" id="KFv-3L-Xvb"/>
                         <outlet property="presenterTitleLabel" destination="s0F-c2-5VK" id="vq0-pl-VNp"/>
+                        <outlet property="shareButton" destination="wL0-hu-uLN" id="Q3j-da-QL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPX-4y-16k" userLabel="First Responder" sceneMemberID="firstResponder"/>

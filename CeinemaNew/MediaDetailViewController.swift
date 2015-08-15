@@ -31,6 +31,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     }
     @IBOutlet var mediaDetailView: UIView!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var mediaTitle: String = ""
     var mediaID: String = ""
@@ -271,16 +272,17 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         activityItems = [postContent, postImage!]
         
         let activityController = UIActivityViewController(activityItems: activityItems!, applicationActivities: nil)
+
+        if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
+            // go on..
+        } else {
+            //if iPad
+            if activityController.respondsToSelector(Selector("popoverPresentationController")) {
+                // on iOS8
+                activityController.popoverPresentationController!.barButtonItem = self.shareButton;
+            }
+        }
         self.presentViewController(activityController, animated: true, completion: nil)
         
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
-            self.presentViewController(activityController, animated: true, completion: nil)
-        } else { //if iPad
-            // Change Rect to position Popover
-            var popoverCntlr = UIPopoverController(contentViewController: activityController)
-            popoverCntlr.presentPopoverFromRect(CGRectMake(self.view.frame.size.width/3, 7 * self.view.frame.size.height/8, 0, 0), inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Down, animated: true)
-            
-        }
     }
 }
