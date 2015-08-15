@@ -263,13 +263,15 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     
     @IBAction func PostSocialMedia(sender: AnyObject) {
         var activityItems: [AnyObject]?
-        let postContent = "\(mediaTitle) by \(presenterName) \(presenterLastName)\(presenterCred) http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=\(mediaID)"
+        //let postContent = "\(mediaTitle) by \(presenterName) \(presenterLastName)\(presenterCred) http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=\(mediaID)"
+        //let postContent = NSString(format: "%@ by %@ http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=%@", mediaTitle, presenterName, mediaID) as String!
+        let postContent = "hi"
         let imageUrl = NSURL(string: imgThumbnail)
         let postImage = UIImage(data: NSData(contentsOfURL: imageUrl!)!)
         activityItems = [postContent, postImage!]
         
         let activityController = UIActivityViewController(activityItems: activityItems!, applicationActivities: nil)
-        //self.presentViewController(activityController, animated: true, completion: nil)
+        self.presentViewController(activityController, animated: true, completion: nil)
         
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone) {
