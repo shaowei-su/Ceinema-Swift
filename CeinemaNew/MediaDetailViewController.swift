@@ -88,9 +88,12 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
             })
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        let navigationBarHeight: CGFloat = self.navigationController!.navigationBar.frame.height
+        println("\(navigationBarHeight)")
         beginParsing()
         
         videoFormatFileName = videoFormatFileName.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
@@ -265,8 +268,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     @IBAction func PostSocialMedia(sender: AnyObject) {
         var activityItems: [AnyObject]?
         //let postContent = "\(mediaTitle) by \(presenterName) \(presenterLastName)\(presenterCred) http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=\(mediaID)"
-        //let postContent = NSString(format: "%@ by %@ http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=%@", mediaTitle, presenterName, mediaID) as String!
-        let postContent = "hi"
+        let postContent = NSString(format: "%@ by %@ http://ceitraining.org/resources/audio-video-detail.cfm?mediaID=%@", mediaTitle, presenterName, mediaID) as String!
         let imageUrl = NSURL(string: imgThumbnail)
         let postImage = UIImage(data: NSData(contentsOfURL: imageUrl!)!)
         activityItems = [postContent, postImage!]
