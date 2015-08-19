@@ -32,6 +32,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             showMsg("Please sign up with your email address, thanks.")
             return
         }
+        if !isValidEmail(SignupEmail.text) {
+            showMsg("Please make sure your email address is correct, thanks.")
+            return
+        }
         var name = SignupName.text
         var email = SignupEmail.text
         //save email to web sever
@@ -72,6 +76,15 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         UIView.setAnimationDuration(movementDuration )
         self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
         UIView.commitAnimations()
+    }
+    
+    //validate the email address
+    func isValidEmail(testStr:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
     }
     
 }
