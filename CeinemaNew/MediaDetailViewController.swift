@@ -215,7 +215,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         fetchRequestDup.includesSubentities = false
         fetchRequestDup.returnsObjectsAsFaults = false
         
-        fetchRequestDup.predicate = NSPredicate(format:"mediaTitle == '\(title)'")
+        fetchRequestDup.predicate = NSPredicate(format:"id == '\(id)'")
         
         // managedContext is your NSManagedObjectContext here
         let items = managedContext.executeFetchRequest(fetchRequestDup, error: &error)!
