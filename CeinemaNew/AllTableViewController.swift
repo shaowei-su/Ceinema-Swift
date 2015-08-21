@@ -51,6 +51,21 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Reachability.isConnectedToNetwork() == true {
+            preParsing()
+        } else {
+            showMsg("Please check your internet connection, thanks!")
+        }
+        
+    }
+    
+    private func showMsg(msg:String) {
+        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
+    }
+
+    
+    func preParsing() {
         //use MBProgressHUD to add the loading activity indicator
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         UIApplication.sharedApplication().keyWindow?.addSubview(loadingNotification)
@@ -73,13 +88,12 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             controller.hidesNavigationBarDuringPresentation = false
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
-        
+            
             self.tableView.tableHeaderView = controller.searchBar
             
             return controller
         })()
     }
-    
 
     func beginParsing() {
         posts = []

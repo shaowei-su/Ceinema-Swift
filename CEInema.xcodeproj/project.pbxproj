@@ -22,6 +22,7 @@
 		9EA10D031B51AC54005E1783 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA10D021B51AC54005E1783 /* WebImage.framework */; };
 		9EA10D061B51AD03005E1783 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA10D051B51AD03005E1783 /* ImageIO.framework */; };
 		9EA10D091B530E32005E1783 /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA10D081B530E31005E1783 /* MediaDetailViewController.swift */; };
+		9EA8FE3D1B86C87E0062C587 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA8FE3C1B86C87E0062C587 /* Reachability.swift */; };
 		9EB116761B4C316700462E58 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB116741B4C316700462E58 /* AllTableViewCell.swift */; };
 		9EBB3EC21B5606F300A35DAC /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBB3EC11B5606F300A35DAC /* SWXMLHash.framework */; };
 		9ED23F461B49E972001C3764 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED23F451B49E972001C3764 /* AllTableViewController.swift */; };
@@ -73,6 +74,7 @@
 		9EA10D021B51AC54005E1783 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		9EA10D051B51AD03005E1783 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		9EA10D081B530E31005E1783 /* MediaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
+		9EA8FE3C1B86C87E0062C587 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9EB116741B4C316700462E58 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 		9EBB3EC11B5606F300A35DAC /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 		9ED23F451B49E972001C3764 /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				9E3602E81B6419A800AE8C8A /* CeinemaNew-Bridging-Header.h */,
 				9EF297021B48AF02003F3F44 /* Images.xcassets */,
 				9EF296FA1B48AF02003F3F44 /* Info.plist */,
+				9EA8FE3C1B86C87E0062C587 /* Reachability.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EA8FE3D1B86C87E0062C587 /* Reachability.swift in Sources */,
 				9ED23F461B49E972001C3764 /* AllTableViewController.swift in Sources */,
 				9E70598C1B549C710041517C /* ToolsWebViewController.swift in Sources */,
 				9EF296FC1B48AF02003F3F44 /* AppDelegate.swift in Sources */,

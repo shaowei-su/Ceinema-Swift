@@ -17,6 +17,31 @@ class SavedTableViewController: UITableViewController {
     var media: [NSManagedObject] = []
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if Reachability.isConnectedToNetwork() == true {
+            loadData()
+        } else {
+            showMsg("Please check your internet connection, thanks!")
+        }
+        
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
+            self.tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
+        }
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        //add google analytics
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            let screenName = reflect(self).summary
+            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            appDelegate.tracker!.send(build as [NSObject : AnyObject])
+        }
+    }
+    
+    private func showMsg(msg:String) {
+        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
+    }
+    
+    func loadData() {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
@@ -32,18 +57,6 @@ class SavedTableViewController: UITableViewController {
         }
         
         savedTableView.reloadData()
-        
-        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
-            self.tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
-        }
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
-        //add google analytics
-        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
-            appDelegate.tracker!.send(build as [NSObject : AnyObject])
-        }
     }
     
     override func setEditing(editing: Bool, animated: Bool)  {

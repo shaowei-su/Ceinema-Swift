@@ -28,7 +28,17 @@ class ToolsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beginParsing()
+        if Reachability.isConnectedToNetwork() == true {
+            beginParsing()
+        } else {
+            showMsg("Please check your internet connection, thanks!")
+        }
+        
+    }
+    
+    private func showMsg(msg:String) {
+        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
     }
 
     func beginParsing() {

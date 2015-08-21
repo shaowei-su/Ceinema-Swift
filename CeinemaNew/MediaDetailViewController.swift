@@ -92,8 +92,6 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        let navigationBarHeight: CGFloat = self.navigationController!.navigationBar.frame.height
-        println("\(navigationBarHeight)")
         beginParsing()
         
         videoFormatFileName = videoFormatFileName.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
