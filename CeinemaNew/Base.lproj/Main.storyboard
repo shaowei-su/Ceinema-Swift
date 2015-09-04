@@ -113,11 +113,11 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIZ-SL-Ard">
-                                        <rect key="frame" x="213" y="399" width="174" height="33"/>
+                                        <rect key="frame" x="206" y="399" width="188" height="33"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <color key="tintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Visit: www.ceitraining.org">
+                                        <state key="normal" title="  Visit: www.ceitraining.org  ">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -131,11 +131,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-Tj-RS1">
-                                        <rect key="frame" x="228" y="448" width="145" height="33"/>
+                                        <rect key="frame" x="221" y="448" width="160" height="33"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <color key="tintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Call: 1-866-637-2342">
+                                        <state key="normal" title="  Call: 1-866-637-2342  ">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -201,7 +201,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <constraint firstAttribute="bottom" secondItem="lEa-fg-gIn" secondAttribute="bottom" constant="20" symbolic="YES" id="HMB-Dl-oNQ"/>
                                     <constraint firstItem="GWc-Vl-KX8" firstAttribute="top" secondItem="2nA-vs-2j3" secondAttribute="top" constant="-16" id="MfK-P0-eWE"/>
                                     <constraint firstAttribute="centerX" secondItem="avY-Pd-sFC" secondAttribute="centerX" id="RDH-0Q-JDb"/>
-                                    <constraint firstAttribute="centerX" secondItem="w3B-Tj-RS1" secondAttribute="centerX" id="S2q-ax-u2m"/>
+                                    <constraint firstAttribute="centerX" secondItem="w3B-Tj-RS1" secondAttribute="centerX" constant="-1" id="S2q-ax-u2m"/>
                                     <constraint firstItem="WOe-vN-UTj" firstAttribute="leading" secondItem="2nA-vs-2j3" secondAttribute="leading" constant="17" id="aZb-U6-U2B"/>
                                     <constraint firstItem="I27-3u-WSf" firstAttribute="top" secondItem="w3B-Tj-RS1" secondAttribute="bottom" constant="25" id="gHR-0R-Bto"/>
                                     <constraint firstItem="I27-3u-WSf" firstAttribute="leading" secondItem="2nA-vs-2j3" secondAttribute="leading" constant="17" id="hi9-4d-Z7j"/>
@@ -381,8 +381,8 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3O-e4-LRu">
-                                        <rect key="frame" x="236" y="119" width="128" height="128"/>
-                                        <state key="normal" image="playButton-100">
+                                        <rect key="frame" x="262" y="145" width="76" height="76"/>
+                                        <state key="normal" image="play-button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1015,12 +1015,12 @@ Persons using this website and application agree to indemnify and hold harmless 
         <image name="folder30png" width="30" height="30"/>
         <image name="home30" width="30" height="30"/>
         <image name="logo" width="130" height="70"/>
-        <image name="playButton-100" width="128" height="128"/>
+        <image name="play-button" width="76" height="76"/>
         <image name="tag30" width="30" height="30"/>
         <image name="tool" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WqO-8N-Pys"/>
-        <segue reference="tT7-fS-F84"/>
+        <segue reference="uEs-g8-PNT"/>
     </inferredMetricsTieBreakers>
 </document>
