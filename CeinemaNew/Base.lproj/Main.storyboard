@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vpq-62-9sm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vpq-62-9sm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Saved-->
+        <!--Favorites-->
         <scene sceneID="pEo-yx-r24">
             <objects>
                 <tableViewController id="zFO-oz-o0h" customClass="SavedTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                             <outlet property="delegate" destination="zFO-oz-o0h" id="v2N-vQ-FEv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Saved" id="GD3-ja-oOs"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="GD3-ja-oOs"/>
                     <connections>
                         <outlet property="savedTableView" destination="fS7-PA-x1d" id="fY8-7w-TZc"/>
                     </connections>
@@ -286,7 +286,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYS-kS-z9k">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UfE-jR-A90"/>
                                     <barButtonItem systemItem="action" id="wL0-hu-uLN">
@@ -301,10 +301,16 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="T5f-Cn-c99"/>
+                                    <barButtonItem style="done" systemItem="bookmarks" id="NKL-J7-EQd">
+                                        <connections>
+                                            <action selector="saveButton:" destination="jQx-pP-CJJ" id="iir-0T-NMQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wOU-xA-nDG"/>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNR-P2-EKg">
-                                <rect key="frame" x="0.0" y="64" width="600" height="447"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="452"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wQ4-TO-ZuA">
                                         <rect key="frame" x="143" y="83" width="315" height="200"/>
@@ -447,13 +453,11 @@ Persons using this website and application agree to indemnify and hold harmless 
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="WGQ-ae-gzU">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="NKL-J7-EQd">
-                            <connections>
-                                <action selector="saveButton:" destination="jQx-pP-CJJ" id="iir-0T-NMQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="dLv-Qu-qFd"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="WGQ-ae-gzU"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mediaDateLabel" destination="ynY-v9-qSm" id="0RE-aW-dYj"/>
                         <outlet property="mediaDetailTitle" destination="9Ka-3i-ee4" id="mLU-Kx-avx"/>
@@ -543,7 +547,7 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="289" y="-1019"/>
         </scene>
-        <!--All-->
+        <!--Lecture-->
         <scene sceneID="5hc-6b-5s9">
             <objects>
                 <tableViewController id="8KS-xm-ZLI" customClass="AllTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
@@ -652,7 +656,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                             <outlet property="delegate" destination="8KS-xm-ZLI" id="bTp-ch-eG9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All" id="MLe-3b-ugf"/>
+                    <navigationItem key="navigationItem" title="Lecture" id="MLe-3b-ugf"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="66B-IL-VcC">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -677,11 +681,11 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="1101" y="-342"/>
         </scene>
-        <!--Saved-->
+        <!--Favorites-->
         <scene sceneID="hlt-iI-jFm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6h-4e-swk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" image="tag30" id="pma-bB-y4W"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="tag30" id="pma-bB-y4W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DcM-Gv-LJv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -696,11 +700,11 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="299" y="1079"/>
         </scene>
-        <!--All-->
+        <!--Lecture-->
         <scene sceneID="5E0-w9-TVE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VdH-gD-Dna" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All" image="folder30png" id="6qg-A5-4md"/>
+                    <tabBarItem key="tabBarItem" title="Lecture" image="folder30png" id="6qg-A5-4md"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2WU-Wq-Y7u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -715,7 +719,7 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="289" y="-342"/>
         </scene>
-        <!--Simulation Tools-->
+        <!--Simulation-->
         <scene sceneID="mSf-ZM-pQT">
             <objects>
                 <tableViewController id="SG5-DS-GbI" customClass="ToolsTableViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
@@ -778,7 +782,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                             <outlet property="delegate" destination="SG5-DS-GbI" id="Tb7-zU-fA3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Simulation Tools" id="ahf-M1-v1k"/>
+                    <navigationItem key="navigationItem" title="Simulation" id="ahf-M1-v1k"/>
                     <connections>
                         <outlet property="toolsData" destination="MPq-h5-1xk" id="PjD-pz-XhB"/>
                     </connections>
@@ -787,11 +791,11 @@ Persons using this website and application agree to indemnify and hold harmless 
             </objects>
             <point key="canvasLocation" x="1388" y="351"/>
         </scene>
-        <!--Tools-->
+        <!--Simulation-->
         <scene sceneID="Hjt-oc-exr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TNk-yc-0RK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tools" image="tool" id="MrU-PZ-wtA"/>
+                    <tabBarItem key="tabBarItem" title="Simulation" image="tool" id="MrU-PZ-wtA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nqy-kt-kjc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1016,7 +1020,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <image name="tool" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Sb-W5-Jdo"/>
-        <segue reference="uEs-g8-PNT"/>
+        <segue reference="WqO-8N-Pys"/>
+        <segue reference="tT7-fS-F84"/>
     </inferredMetricsTieBreakers>
 </document>

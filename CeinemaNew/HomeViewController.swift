@@ -72,7 +72,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         pageScrollView.contentSize = CGSizeMake(pageWidth! * CGFloat(pageImages.count), pageHeight!)
         
         loadVisiblePages()
+        //set up NSTimer to auto rotate pages every 4 seconds
+        NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "moveToNextPage", userInfo: nil, repeats: true)
     }
+    
+    func moveToNextPage (){
+        
+        var pageWidth:CGFloat = CGRectGetWidth(self.pageScrollView.frame)
+        let maxWidth:CGFloat = pageWidth * 4
+        var contentOffset:CGFloat = self.pageScrollView.contentOffset.x
+        //move to next page, to the begining if reach the tail
+        var slideToX = contentOffset + pageWidth
+        
+        if  contentOffset + pageWidth == maxWidth{
+            slideToX = 0
+        }
+        self.pageScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, CGRectGetHeight(self.pageScrollView.frame)), animated: true)
+    }
+    
     func loadPage(page: Int) {
         
         if page < 0 || page >= pageImages.count {
