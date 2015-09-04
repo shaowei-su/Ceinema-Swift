@@ -76,6 +76,24 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     }
     
     @IBAction func contactButton(sender: AnyObject) {
+        var alert = UIAlertController(title: "Email to CEI team", message: "Report an issue or a brief review of this lecture to CEI team", preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Email",
+            style: .Default) { (action: UIAlertAction!) -> Void in
+                self.emailCEI()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
+            (action: UIAlertAction!) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func emailCEI() {
         if MFMailComposeViewController.canSendMail() {
             var composer = MFMailComposeViewController()
             composer.delegate = self
@@ -88,7 +106,6 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
             })
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
