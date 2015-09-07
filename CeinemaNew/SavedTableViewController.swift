@@ -41,6 +41,8 @@ class SavedTableViewController: UITableViewController {
         alert.show()
     }
     
+    /// Fetch data from Core Data and then reload the table view
+    ///
     func loadData() {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -128,7 +130,7 @@ class SavedTableViewController: UITableViewController {
         }
     }
     
-    //seque to the detail view
+    ///seque to the detail view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowSavedMediaSegue" {
             if let destination = segue.destinationViewController as? MediaDetailViewController {

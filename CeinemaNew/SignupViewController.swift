@@ -26,6 +26,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         alert.show()
     }
     
+    /// Triggered once the user confirm the submission.
+    /// Checks the validation of inputed email address.
+    /// If the address is correct, then make a http request to save the registration info
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     private func confirm() {
         
         if SignupEmail.text.isEmpty {
@@ -78,7 +84,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         UIView.commitAnimations()
     }
     
-    //validate the email address
+    /// Validate the email address
+    ///
+    /// :param: String input email address
+    /// :returns: Bool indicate if the addresss is valid or not
     func isValidEmail(testStr:String) -> Bool {
         // println("validate calendar: \(testStr)")
         let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"

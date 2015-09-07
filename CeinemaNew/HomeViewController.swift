@@ -26,6 +26,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    /// Call CEI line when the "call" button touched
+    ///
+    /// :param: AnyObject passed in from storyboard
+    /// :returns: nothing
     @IBAction func callCEI(sender: AnyObject) {
         let phone = "tel://8666372342"
         let urlPhone: NSURL = NSURL(string: phone)!
@@ -35,7 +39,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //add Google Analytics
+        ///add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
             let screenName = reflect(self).summary
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
@@ -76,6 +80,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "moveToNextPage", userInfo: nil, repeats: true)
     }
     
+    /// Move the carousel pages automatically to the next page.
+    /// To the first page if the reaches the end
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func moveToNextPage (){
         
         var pageWidth:CGFloat = CGRectGetWidth(self.pageScrollView.frame)
@@ -90,6 +99,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         self.pageScrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, CGRectGetHeight(self.pageScrollView.frame)), animated: true)
     }
     
+    /// Dynamically load pageview on the paged scroll view
+    ///
+    /// :param: int one int number indicate the position of current page
+    /// :returns: nothing
     func loadPage(page: Int) {
         
         if page < 0 || page >= pageImages.count {
@@ -119,6 +132,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    /// Remove a page from the scroll view and reset the container array
+    ///
+    /// :param: int one int number indicate the position of current page
+    /// :returns: nothing
     func purgePage(page: Int) {
         
         if page < 0 || page >= pageImages.count {
@@ -126,7 +143,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             return
         }
         
-        // Remove a page from the scroll view and reset the container array
         if let pageView = pageViews[page] {
             pageView.removeFromSuperview()
             pageViews[page] = nil
@@ -134,6 +150,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    /// Dynamically load current page on scroll view.
+    /// After determining the position, call loadPage() and purgePage().
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func loadVisiblePages() {
         
         // First, determine which page is currently visible
@@ -187,6 +208,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         loadVisiblePages()
     }
     
+    /// Detect the tap event and trigger following behaviors
+    ///
+    /// For different pages:
+    ///
+    /// 1. Page two: call cei line
+    /// 2. Page three: perform segue and move the the tools page
+    /// 3. page four: perform segue and move to newsletter sign up page
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func tapDetected() {
         let pageCurrent = pageControl.currentPage
         switch pageCurrent {

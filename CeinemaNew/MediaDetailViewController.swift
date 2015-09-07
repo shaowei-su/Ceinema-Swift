@@ -66,6 +66,10 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
+    /// add MPVC to the view
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func playMovie() {
         
         let mpController = MPMoviePlayerViewController(contentURL: NSURL(string: mediaUrl))
@@ -93,6 +97,10 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    /// compose email to CEI support team
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func emailCEI() {
         if MFMailComposeViewController.canSendMail() {
             var composer = MFMailComposeViewController()
@@ -124,7 +132,11 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
-    
+    /// Parse XML file by SWXMLHash.
+    /// Then demonstrate parsed info on media detail page
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func beginParsing() {
         mediaID = mediaID.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         mediaID = mediaID.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
@@ -201,6 +213,16 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    /// Once the user press save button:
+    ///
+    /// 1. Trigger html request to save the media ID
+    /// 2. Save media info into Core Data
+    ///
+    /// :param: title The title of one media
+    /// :param: presenter Full name of the presenter
+    /// :param: date Date of the presentation
+    /// :param: imageThumbnail Short url of thumbnail image
+    /// :returns: nothing
     func saveMedia(title: String, presenter: String, date: String, imageThumbnail: String, id: String) {
         //save mediaID to web sever
         var idContent = id
@@ -250,6 +272,10 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         managedContext.save(nil)
     }
     
+    /// Verify the media video url to see if WOWZA media server is working
+    /// 
+    /// :param: urlString Completed video url
+    /// :returns: true / false
     func verifyUrl (urlString: String?) -> Bool {
         //Check for nil
         if let urlString = urlString {

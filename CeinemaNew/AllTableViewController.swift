@@ -64,9 +64,15 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         alert.show()
     }
 
-    
+    /// Two main operations:
+    ///
+    /// 1. Use MBProgressHUD to add the loading activity indicator, start parse() with a separate queue at background.
+    /// 2. Create a search controller then add to the tableview
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func preParsing() {
-        //use MBProgressHUD to add the loading activity indicator
+        
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         UIApplication.sharedApplication().keyWindow?.addSubview(loadingNotification)
         loadingNotification.labelText = "Loading"
@@ -80,7 +86,6 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             }
         }
         
-        //create a search controller then add to the tableview
         self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
@@ -236,7 +241,12 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         }
     }
     
-    //search function
+    /// Search function support.
+    /// Split input string by " "(empty space) for multiple search.
+    /// Keywords match both media title and presenter name
+    ///
+    /// :param: String user input string
+    /// :returns: nothing
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
         let postsArray = posts as AnyObject as! [NSMutableDictionary]
@@ -270,9 +280,8 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
 
         allData.reloadData()
     }
-    /*
-        interact with webserver whenever finish search
-    */
+    
+    /// Interact with webserver whenever finish search
     func willDismissSearchController(searchController: UISearchController) {
         var searchContents = searchController.searchBar.text
         searchContents = searchContents.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!

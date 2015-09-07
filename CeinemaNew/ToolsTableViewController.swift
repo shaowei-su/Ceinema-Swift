@@ -40,7 +40,13 @@ class ToolsTableViewController: UITableViewController {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
     }
-
+    
+    /// Parse XML file by SWXMLHash. 
+    /// After that, eliminate tuples that marked as "hide"
+    /// The map "toolmap" will map the index in table view to the index in parsed XML Indexer
+    ///
+    /// :param: nothing
+    /// :returns: nothing
     func beginParsing() {
         let xmlData = NSData(contentsOfURL: NSURL(string: "http://ceitraining.org/xml/live/simulations.xml")!)!
         xmlParsed = SWXMLHash.parse(xmlData)
