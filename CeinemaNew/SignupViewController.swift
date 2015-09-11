@@ -20,6 +20,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        ///add Google Analytics
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            let screenName = reflect(self).summary
+            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            appDelegate.tracker!.send(build as [NSObject : AnyObject])
+        }
+    }
     
     private func showMsg(msg:String) {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")

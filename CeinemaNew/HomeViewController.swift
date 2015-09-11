@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarControllerDelegate {
 
 
     @IBOutlet weak var visitHomeButton: UIButton!
@@ -51,7 +51,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         //set up the button
-        
+        self.tabBarController?.delegate = self
         // load images into the an array
         pageImages = [UIImage(named:"rsz_cei_logo_redesign-final2013")!,
             UIImage(named:"cei-line.fw")!,
@@ -226,12 +226,28 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 let urlPhone: NSURL = NSURL(string: phone)!
                 UIApplication.sharedApplication().openURL(urlPhone)
             case 2:
-                performSegueWithIdentifier("homeToToolSegue", sender: nil)
+                //performSegueWithIdentifier("homeToToolSegue", sender: nil)
+                switch2ToolTab()
             case 3:
                 performSegueWithIdentifier("homeToSignupSegue", sender: nil)
             default:
                 println("Single Tap on imageview at \(pageCurrent)")
         }
         
+    }
+    
+    /// Switch top view to the tab bar: 2
+    ///
+    /// :param: none
+    /// :returns: none
+    func switch2ToolTab() {
+        self.tabBarController!.selectedIndex = 2
+    }
+    
+    /// Pop navigation stack to the root when "Home" tabed
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        if (tabBarController.selectedIndex == 0) {
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
 }
