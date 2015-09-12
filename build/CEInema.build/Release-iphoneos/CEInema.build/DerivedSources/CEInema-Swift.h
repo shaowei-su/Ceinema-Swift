@@ -95,14 +95,22 @@ typedef struct _NSZone NSZone;
 @class UILabel;
 @class NSCoder;
 
+
+/// Contains the prototype info of lecture table view
 SWIFT_CLASS("_TtC7CEInema16AllTableViewCell")
 @interface AllTableViewCell : UITableViewCell
+
+/// Lecture image thumbnail outlet
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified mediaImage;
+
+/// Lecture title label outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified mediaTitle;
+
+/// Lecture presentor label outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified mediaPresentor;
+
+/// Lecture date label outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified mediaDate;
-- (void)awakeFromNib;
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -121,20 +129,52 @@ SWIFT_CLASS("_TtC7CEInema16AllTableViewCell")
 @class UISearchBar;
 @class NSBundle;
 
+
+/// Controller of lecture table view.
+///
+/// Main functions:
+///
+/// <ol><li><p>Load table view with lectures info parsed from web server</p></li><li><p>Search controller supports user defined search</p></li><li><p>Drag Down refresh</p></li><li><p>Segue to lecture detail page</p></li></ol>
 SWIFT_CLASS("_TtC7CEInema22AllTableViewController")
 @interface AllTableViewController : UITableViewController <NSXMLParserDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
+
+/// search bar outlet
 @property (nonatomic, weak) IBOutlet UISearchBar * __null_unspecified searchDisplay;
+
+/// table view outlet
 @property (nonatomic) IBOutlet UITableView * __null_unspecified allData;
+
+/// xml parser
 @property (nonatomic) NSXMLParser * __nonnull parser;
+
+/// posts contains all parsed lecture info (multiple key-value pairs saved in elements)
 @property (nonatomic) NSMutableArray * __nonnull posts;
+
+/// multiple key-value pairs saved in elements
 @property (nonatomic) NSMutableDictionary * __nonnull elements;
+
+/// element stores xml file element name parsed in
 @property (nonatomic) NSString * __nonnull element;
+
+/// mediaTitle parsed in
 @property (nonatomic) NSMutableString * __nonnull mediaTitle;
+
+/// presenterName parsed in
 @property (nonatomic) NSMutableString * __nonnull presenterName;
+
+/// mediaDateReleased parsed in
 @property (nonatomic) NSMutableString * __nonnull mediaDateReleased;
+
+/// mediaThumbPath parsed in
 @property (nonatomic) NSMutableString * __nonnull mediaThumbPath;
+
+/// mediaID parsed in
 @property (nonatomic) NSMutableString * __nonnull mediaID;
+
+/// contains lectures that are filtered by search controller
 @property (nonatomic, copy) NSArray * __nonnull filteredPosts;
+
+/// search controller for user defined search
 @property (nonatomic) UISearchController * __nonnull resultSearchController;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -147,6 +187,8 @@ SWIFT_CLASS("_TtC7CEInema22AllTableViewController")
 ///
 /// \returns nothing
 - (void)preParsing;
+
+/// begin parse with NSXMLParser()
 - (void)beginParsing;
 - (void)parser:(NSXMLParser * __nonnull)parser didStartElement:(NSString * __nonnull)elementName namespaceURI:(NSString * __nullable)namespaceURI qualifiedName:(NSString * __nullable)qName attributes:(NSDictionary * __nonnull)attributeDict;
 - (void)parser:(NSXMLParser * __nonnull)parser didEndElement:(NSString * __nonnull)elementName namespaceURI:(NSString * __nullable)namespaceURI qualifiedName:(NSString * __nullable)qName;
@@ -185,7 +227,16 @@ SWIFT_CLASS("_TtC7CEInema22AllTableViewController")
 SWIFT_CLASS("_TtC7CEInema11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic) UIWindow * __nullable window;
+
+/// Google Analytics Tracker instance
 @property (nonatomic) id <GAITracker> __nullable tracker;
+
+/// set up Google Analytics as a global function that can be reached by other controller class.
+/// Need to specify unique trackID here
+///
+/// \param none 
+///
+/// \returns none
 + (void)setupGoogleAnalytics;
 - (BOOL)application:(UIApplication * __nonnull)application didFinishLaunchingWithOptions:(NSDictionary * __nullable)launchOptions;
 - (void)applicationWillResignActive:(UIApplication * __nonnull)application;
@@ -193,25 +244,58 @@ SWIFT_CLASS("_TtC7CEInema11AppDelegate")
 - (void)applicationWillEnterForeground:(UIApplication * __nonnull)application;
 - (void)applicationDidBecomeActive:(UIApplication * __nonnull)application;
 - (void)applicationWillTerminate:(UIApplication * __nonnull)application;
+
+/// The directory the application uses to store the Core Data store file.
 @property (nonatomic) NSURL * __nonnull applicationDocumentsDirectory;
+
+/// The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
 @property (nonatomic) NSManagedObjectModel * __nonnull managedObjectModel;
+
+/// The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+/// Create the coordinator and store
 @property (nonatomic) NSPersistentStoreCoordinator * __nullable persistentStoreCoordinator;
+
+/// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
+/// This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
 @property (nonatomic) NSManagedObjectContext * __nullable managedObjectContext;
+
+/// Replace this implementation with code to handle the error appropriately.
+/// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 - (void)saveContext;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIImage;
 @class UIScrollView;
+@class UITabBarController;
 @class UIButton;
 @class UIPageControl;
 
+
+/// Home view controller.
+/// Main functions
+///
+/// <ol><li><p>Carousel paged scroll image controller</p></li><li><p>Visit Homepage button</p></li><li><p>Call CEI button</p></li></ol>
 SWIFT_CLASS("_TtC7CEInema18HomeViewController")
-@interface HomeViewController : UIViewController <UIScrollViewDelegate>
+@interface HomeViewController : UIViewController <UIScrollViewDelegate, UITabBarControllerDelegate>
+
+/// visit "www.ceitraining.org" button outlet
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified visitHomeButton;
+
+/// scroll view outlet
 @property (nonatomic, weak) IBOutlet UIScrollView * __null_unspecified pageScrollView;
+
+/// page controller for paged scroll view to controll the behavior of homepage carousel
 @property (nonatomic, weak) IBOutlet UIPageControl * __null_unspecified pageControl;
+
+/// carousel image array
 @property (nonatomic, copy) NSArray * __nonnull pageImages;
+
+/// visit home button touched
+///
+/// \param sender button outlet
+///
+/// \returns none
 - (IBAction)VisitHomepage:(id __nonnull)sender;
 
 /// Call CEI line when the "call" button touched
@@ -264,6 +348,16 @@ SWIFT_CLASS("_TtC7CEInema18HomeViewController")
 ///
 /// \returns nothing
 - (void)tapDetected;
+
+/// Switch top view to the tab bar: 2
+///
+/// \param none 
+///
+/// \returns none
+- (void)switch2ToolTab;
+
+/// Pop navigation stack to the root when "Home" tabed
+- (void)tabBarController:(UITabBarController * __nonnull)tabBarController didSelectViewController:(UIViewController * __nonnull)viewController;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -274,32 +368,74 @@ SWIFT_CLASS("_TtC7CEInema18HomeViewController")
 @class NSError;
 @class UIBarButtonItem;
 
+
+/// Media detail controller
+///
+/// Main functions
+///
+/// <ol><li><p>Load lecture detail thru XML file</p></li><li><p>Play video</p></li><li><p>Save "Favorites" to core data</p></li><li><p>Share thru Activity Controller</p></li><li><p>Report video review to CEI team thru email</p></li></ol>
 SWIFT_CLASS("_TtC7CEInema25MediaDetailViewController")
 @interface MediaDetailViewController : UIViewController <MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
+
+/// media title outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified mediaDetailTitle;
+
+/// media date outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified mediaDateLabel;
+
+/// presenterName outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified presenterNameLabel;
+
+/// presenter title outlet, eg.MD, PHD...
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified presenterTitleLabel;
+
+/// presenter employer outlet, eg. U of R..
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified presenterEmpLabel;
+
+/// media thumbnail image outlet
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified mediaImage;
+
+/// learning objectives outlet
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified objContentsLabel;
+
+/// play button touched, then launch MPVC
+///
+/// \param play button outlet
+///
+/// \returns none
 - (IBAction)playButtonTouched:(UIButton * __nonnull)sender;
+
+/// detail view outlet
 @property (nonatomic) IBOutlet UIView * __null_unspecified mediaDetailView;
+
+/// share button outlet
 @property (nonatomic, weak) IBOutlet UIBarButtonItem * __null_unspecified shareButton;
+
+/// media title
 @property (nonatomic, copy) NSString * __nonnull mediaTitle;
+
+/// media ID
 @property (nonatomic, copy) NSString * __nonnull mediaID;
 @property (nonatomic, copy) NSString * __nonnull mediaDate;
 @property (nonatomic, copy) NSString * __nonnull presenterName;
 @property (nonatomic, copy) NSString * __nonnull presenterLastName;
 @property (nonatomic, copy) NSString * __nonnull presenterCred;
+
+/// presenter title, eg. Medical Officer..
 @property (nonatomic, copy) NSString * __nonnull presenterTitle;
 @property (nonatomic, copy) NSString * __nonnull presenterEmp;
 @property (nonatomic, copy) NSString * __nonnull imgThumbnail;
 @property (nonatomic, copy) NSString * __nonnull videoFormatPath;
 @property (nonatomic, copy) NSString * __nonnull videoFormatFileName;
 @property (nonatomic, copy) NSString * __nonnull objectives;
+
+/// url to fetch media detail info thru xml
 @property (nonatomic, copy) NSString * __nonnull fetchUrl;
+
+/// media resources url
 @property (nonatomic, copy) NSString * __nonnull mediaUrl;
+
+/// xml data parsed in
 @property (nonatomic) NSData * __nullable xmlData;
 - (void)viewWillAppear:(BOOL)animated;
 
@@ -356,9 +492,19 @@ SWIFT_CLASS("_TtC7CEInema25MediaDetailViewController")
 
 @class NSManagedObject;
 
+
+/// Favorites table view controller
+///
+/// Main functions:
+///
+/// <ol><li><p>Load saved favorites to table view</p></li><li><p>Modify Core Data database tuples</p></li><li><p>Seque to lecture detail page</p></li></ol>
 SWIFT_CLASS("_TtC7CEInema24SavedTableViewController")
 @interface SavedTableViewController : UITableViewController
+
+/// Table view outlet
 @property (nonatomic) IBOutlet UITableView * __null_unspecified savedTableView;
+
+/// Core data array
 @property (nonatomic, copy) NSArray * __nonnull media;
 - (void)viewWillAppear:(BOOL)animated;
 
@@ -382,16 +528,37 @@ SWIFT_CLASS("_TtC7CEInema24SavedTableViewController")
 
 @class UITextField;
 
+
+/// Sign up page controller
+///
+/// Help user register for the newsletter
 SWIFT_CLASS("_TtC7CEInema20SignupViewController")
 @interface SignupViewController : UIViewController <UITextFieldDelegate>
+
+/// user name text field outlet
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified SignupName;
+
+/// user email address field outlet
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified SignupEmail;
+
+/// Confirm button touched, call confirm()
 - (IBAction)ConfirmButton:(id __nonnull)sender;
+
+/// Cancel button touched, return to Home view
 - (IBAction)CancelButton:(id __nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
 - (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 - (void)textFieldDidBeginEditing:(UITextField * __nonnull)textField;
 - (void)textFieldDidEndEditing:(UITextField * __nonnull)textField;
+
+/// Change view position when keyboard shows up
+///
+/// \param up indicate the direction of keyboard 
+///
+/// \param moveValue indicate the amount of distance need to move
+///
+/// \returns none
 - (void)animateViewMoving:(BOOL)up moveValue:(CGFloat)moveValue;
 
 /// Validate the email address
@@ -405,22 +572,34 @@ SWIFT_CLASS("_TtC7CEInema20SignupViewController")
 @end
 
 
+
+/// Table view cell prototype
 SWIFT_CLASS("_TtC7CEInema18ToolsTableViewCell")
 @interface ToolsTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified toolTitle;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified toolPostingDate;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified toolPublisher;
-- (void)awakeFromNib;
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+
+/// Simulation tools table view controller
+///
+/// Main functions:
+///
+/// <ol><li><p>Load simulation tools from web server thru xml file</p></li><li><p>Segue to tool detail page</p></li></ol>
 SWIFT_CLASS("_TtC7CEInema24ToolsTableViewController")
 @interface ToolsTableViewController : UITableViewController
+
+/// table view outlet
 @property (nonatomic) IBOutlet UITableView * __null_unspecified toolsData;
+
+/// count the number of tools
 @property (nonatomic) NSInteger toolCounter;
+
+/// map from index in table view to xml indexer
 @property (nonatomic, copy) NSDictionary * __nonnull toolMap;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -444,9 +623,15 @@ SWIFT_CLASS("_TtC7CEInema24ToolsTableViewController")
 
 @class UIWebView;
 
+
+/// Simulation tool detail page
 SWIFT_CLASS("_TtC7CEInema22ToolsWebViewController")
 @interface ToolsWebViewController : UIViewController
+
+/// UI web view outlet
 @property (nonatomic, weak) IBOutlet UIWebView * __null_unspecified toolWebView;
+
+/// Tool full URL
 @property (nonatomic, copy) NSString * __nonnull toolUrl;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -455,12 +640,15 @@ SWIFT_CLASS("_TtC7CEInema22ToolsWebViewController")
 @end
 
 
+
+/// Web view controller to load CEI homepage
 SWIFT_CLASS("_TtC7CEInema17WebViewController")
 @interface WebViewController : UIViewController
+
+/// UI Web View outlet
 @property (nonatomic, weak) IBOutlet UIWebView * __null_unspecified webView;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

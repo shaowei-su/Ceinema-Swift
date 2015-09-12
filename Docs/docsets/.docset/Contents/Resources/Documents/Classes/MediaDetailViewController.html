@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MediaDetailViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/MediaDetailViewController" class="dashAnchor"></a>
+    <a title="MediaDetailViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href=""><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MediaDetailViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+          <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AllTableViewCell.html">AllTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AllTableViewController.html">AllTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaDetailViewController.html">MediaDetailViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedTableViewController.html">SavedTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignupViewController.html">SignupViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsTableViewCell.html">ToolsTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsTableViewController.html">ToolsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsWebViewController.html">ToolsWebViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebViewController.html">WebViewController</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MediaDetailViewController</h1>
+              <div class="declaration">
+                <div class="Swift">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Media detail controller</p>
+
+<p>Main functions</p>
+
+<ol>
+<li>Load lecture detail thru XML file</li>
+<li>Play video</li>
+<li>Save <q>Favorites</q> to core data</li>
+<li>Share thru Activity Controller</li>
+<li>Report video review to CEI team thru email</li>
+</ol>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController16mediaDetailTitleXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/mediaDetailTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController16mediaDetailTitleXwGSQCSo7UILabel_">mediaDetailTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media title outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">mediaDetailTitle</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController14mediaDateLabelXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/mediaDateLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController14mediaDateLabelXwGSQCSo7UILabel_">mediaDateLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media date outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">mediaDateLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController18presenterNameLabelXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/presenterNameLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController18presenterNameLabelXwGSQCSo7UILabel_">presenterNameLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>presenterName outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">presenterNameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController19presenterTitleLabelXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/presenterTitleLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController19presenterTitleLabelXwGSQCSo7UILabel_">presenterTitleLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>presenter title outlet, eg.MD, PHD&hellip;</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">presenterTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController17presenterEmpLabelXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/presenterEmpLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController17presenterEmpLabelXwGSQCSo7UILabel_">presenterEmpLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>presenter employer outlet, eg. U of R..</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">presenterEmpLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController10mediaImageXwGSQCSo11UIImageView_"></a>
+                    <a name="//apple_ref/swift/Property/mediaImage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController10mediaImageXwGSQCSo11UIImageView_">mediaImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media thumbnail image outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">mediaImage</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController16objContentsLabelXwGSQCSo7UILabel_"></a>
+                    <a name="//apple_ref/swift/Property/objContentsLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController16objContentsLabelXwGSQCSo7UILabel_">objContentsLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>learning objectives outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">objContentsLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController17playButtonTouchedFS0_FCSo8UIButtonT_"></a>
+                    <a name="//apple_ref/swift/Method/playButtonTouched(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController17playButtonTouchedFS0_FCSo8UIButtonT_">playButtonTouched(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>play button touched, then launch MPVC</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBAction</span> <span class="kd">func</span> <span class="nf">playButtonTouched</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>play</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>button outlet</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>none</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController15mediaDetailViewGSQCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/mediaDetailView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController15mediaDetailViewGSQCSo6UIView_">mediaDetailView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>detail view outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">var</span> <span class="nv">mediaDetailView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController11shareButtonXwGSQCSo15UIBarButtonItem_"></a>
+                    <a name="//apple_ref/swift/Property/shareButton" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController11shareButtonXwGSQCSo15UIBarButtonItem_">shareButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>share button outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">shareButton</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController10mediaTitleSS"></a>
+                    <a name="//apple_ref/swift/Property/mediaTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController10mediaTitleSS">mediaTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media title</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController7mediaIDSS"></a>
+                    <a name="//apple_ref/swift/Property/mediaID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController7mediaIDSS">mediaID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaID</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController9mediaDateSS"></a>
+                    <a name="//apple_ref/swift/Property/mediaDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController9mediaDateSS">mediaDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController13presenterNameSS"></a>
+                    <a name="//apple_ref/swift/Property/presenterName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController13presenterNameSS">presenterName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController17presenterLastNameSS"></a>
+                    <a name="//apple_ref/swift/Property/presenterLastName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController17presenterLastNameSS">presenterLastName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController13presenterCredSS"></a>
+                    <a name="//apple_ref/swift/Property/presenterCred" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController13presenterCredSS">presenterCred</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController14presenterTitleSS"></a>
+                    <a name="//apple_ref/swift/Property/presenterTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController14presenterTitleSS">presenterTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>presenter title, eg. Medical Officer..</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">presenterTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController12presenterEmpSS"></a>
+                    <a name="//apple_ref/swift/Property/presenterEmp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController12presenterEmpSS">presenterEmp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController12imgThumbnailSS"></a>
+                    <a name="//apple_ref/swift/Property/imgThumbnail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController12imgThumbnailSS">imgThumbnail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController15videoFormatPathSS"></a>
+                    <a name="//apple_ref/swift/Property/videoFormatPath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController15videoFormatPathSS">videoFormatPath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController19videoFormatFileNameSS"></a>
+                    <a name="//apple_ref/swift/Property/videoFormatFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController19videoFormatFileNameSS">videoFormatFileName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController10objectivesSS"></a>
+                    <a name="//apple_ref/swift/Property/objectives" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController10objectivesSS">objectives</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController8fetchUrlSS"></a>
+                    <a name="//apple_ref/swift/Property/fetchUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController8fetchUrlSS">fetchUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>url to fetch media detail info thru xml</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">fetchUrl</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController8mediaUrlSS"></a>
+                    <a name="//apple_ref/swift/Property/mediaUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController8mediaUrlSS">mediaUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>media resources url</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaUrl</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController7xmlDataGSqCSo6NSData_"></a>
+                    <a name="//apple_ref/swift/Property/xmlData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController7xmlDataGSqCSo6NSData_">xmlData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>xml data parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">xmlData</span><span class="p">:</span> <span class="kt">NSData</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema25MediaDetailViewController9xmlParsedGSqO9SWXMLHash10XMLIndexer_"></a>
+                    <a name="//apple_ref/swift/Property/xmlParsed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema25MediaDetailViewController9xmlParsedGSqO9SWXMLHash10XMLIndexer_">xmlParsed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>xml indexer from SWXMLHash</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">xmlParsed</span><span class="p">:</span> <span class="kt">XMLIndexer</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController14viewWillAppearFS0_FSbT_"></a>
+                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController14viewWillAppearFS0_FSbT_">viewWillAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController9playMovieFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/playMovie()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController9playMovieFS0_FT_T_">playMovie()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>add MPVC to the view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">playMovie</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nothing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController13contactButtonFS0_FPSs9AnyObject_T_"></a>
+                    <a name="//apple_ref/swift/Method/contactButton(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController13contactButtonFS0_FPSs9AnyObject_T_">contactButton(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController8emailCEIFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/emailCEI()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController8emailCEIFS0_FT_T_">emailCEI()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>compose email to CEI support team</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">emailCEI</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nothing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController11viewDidLoadFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController11viewDidLoadFS0_FT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController12beginParsingFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/beginParsing()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController12beginParsingFS0_FT_T_">beginParsing()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parse XML file by SWXMLHash.
+Then demonstrate parsed info on media detail page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">beginParsing</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nothing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController10saveButtonFS0_FPSs9AnyObject_T_"></a>
+                    <a name="//apple_ref/swift/Method/saveButton(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController10saveButtonFS0_FPSs9AnyObject_T_">saveButton(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController9saveMediaFS0_FTSS9presenterSS4dateSS14imageThumbnailSS2idSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/saveMedia(_:presenter:date:imageThumbnail:id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController9saveMediaFS0_FTSS9presenterSS4dateSS14imageThumbnailSS2idSS_T_">saveMedia(_:presenter:date:imageThumbnail:id:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Once the user press save button:</p>
+
+<ol>
+<li>Trigger html request to save the media ID</li>
+<li>Save media info into Core Data</li>
+</ol>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">saveMedia</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">imageThumbnail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title of one media</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>presenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Full name of the presenter</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Date of the presentation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>imageThumbnail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Short url of thumbnail image</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController9verifyUrlFS0_FGSqSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/verifyUrl(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController9verifyUrlFS0_FGSqSS_Sb">verifyUrl(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify the media video url to see if WOWZA media server is working</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">verifyUrl</span> <span class="p">(</span><span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completed video url</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true / false</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController21mailComposeControllerFS0_FTGSQCSo27MFMailComposeViewController_19didFinishWithResultVSC19MFMailComposeResult5errorGSQCSo7NSError__T_"></a>
+                    <a name="//apple_ref/swift/Method/mailComposeController(_:didFinishWithResult:error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController21mailComposeControllerFS0_FTGSQCSo27MFMailComposeViewController_19didFinishWithResultVSC19MFMailComposeResult5errorGSQCSo7NSError__T_">mailComposeController(_:didFinishWithResult:error:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema25MediaDetailViewController15PostSocialMediaFS0_FPSs9AnyObject_T_"></a>
+                    <a name="//apple_ref/swift/Method/PostSocialMedia(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema25MediaDetailViewController15PostSocialMediaFS0_FPSs9AnyObject_T_">PostSocialMedia(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MediaDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MFMailComposeViewControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external">ShaoweiSu</a>. All rights reserved. (Last updated: 2015-09-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

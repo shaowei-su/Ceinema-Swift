@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AllTableViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AllTableViewController" class="dashAnchor"></a>
+    <a title="AllTableViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href=""><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AllTableViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+          <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AllTableViewCell.html">AllTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AllTableViewController.html">AllTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaDetailViewController.html">MediaDetailViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedTableViewController.html">SavedTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SignupViewController.html">SignupViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsTableViewCell.html">ToolsTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsTableViewController.html">ToolsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ToolsWebViewController.html">ToolsWebViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebViewController.html">WebViewController</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AllTableViewController</h1>
+              <div class="declaration">
+                <div class="Swift">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Controller of lecture table view.</p>
+
+<p>Main functions:</p>
+
+<ol>
+<li>Load table view with lectures info parsed from web server</li>
+<li>Search controller supports user defined search</li>
+<li>Drag Down refresh</li>
+<li>Segue to lecture detail page</li>
+</ol>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController13searchDisplayXwGSQCSo11UISearchBar_"></a>
+                    <a name="//apple_ref/swift/Property/searchDisplay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController13searchDisplayXwGSQCSo11UISearchBar_">searchDisplay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>search bar outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">searchDisplay</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController7allDataGSQCSo11UITableView_"></a>
+                    <a name="//apple_ref/swift/Property/allData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController7allDataGSQCSo11UITableView_">allData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>table view outlet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">@IBOutlet</span> <span class="k">var</span> <span class="nv">allData</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController6parserCSo11NSXMLParser"></a>
+                    <a name="//apple_ref/swift/Property/parser" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController6parserCSo11NSXMLParser">parser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>xml parser</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">parser</span> <span class="o">=</span> <span class="kt">NSXMLParser</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController5postsCSo14NSMutableArray"></a>
+                    <a name="//apple_ref/swift/Property/posts" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController5postsCSo14NSMutableArray">posts</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>posts contains all parsed lecture info (multiple key-value pairs saved in elements)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">posts</span> <span class="o">=</span> <span class="kt">NSMutableArray</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController8elementsCSo19NSMutableDictionary"></a>
+                    <a name="//apple_ref/swift/Property/elements" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController8elementsCSo19NSMutableDictionary">elements</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>multiple key-value pairs saved in elements</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">elements</span> <span class="o">=</span> <span class="kt">NSMutableDictionary</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController7elementCSo8NSString"></a>
+                    <a name="//apple_ref/swift/Property/element" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController7elementCSo8NSString">element</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>element stores xml file element name parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">element</span> <span class="o">=</span> <span class="kt">NSString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController10mediaTitleCSo15NSMutableString"></a>
+                    <a name="//apple_ref/swift/Property/mediaTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController10mediaTitleCSo15NSMutableString">mediaTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>mediaTitle parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaTitle</span> <span class="o">=</span> <span class="kt">NSMutableString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController13presenterNameCSo15NSMutableString"></a>
+                    <a name="//apple_ref/swift/Property/presenterName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController13presenterNameCSo15NSMutableString">presenterName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>presenterName parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">presenterName</span> <span class="o">=</span> <span class="kt">NSMutableString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController17mediaDateReleasedCSo15NSMutableString"></a>
+                    <a name="//apple_ref/swift/Property/mediaDateReleased" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController17mediaDateReleasedCSo15NSMutableString">mediaDateReleased</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>mediaDateReleased parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaDateReleased</span> <span class="o">=</span> <span class="kt">NSMutableString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController14mediaThumbPathCSo15NSMutableString"></a>
+                    <a name="//apple_ref/swift/Property/mediaThumbPath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController14mediaThumbPathCSo15NSMutableString">mediaThumbPath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>mediaThumbPath parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaThumbPath</span> <span class="o">=</span> <span class="kt">NSMutableString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController7mediaIDCSo15NSMutableString"></a>
+                    <a name="//apple_ref/swift/Property/mediaID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController7mediaIDCSo15NSMutableString">mediaID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>mediaID parsed in</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">mediaID</span> <span class="o">=</span> <span class="kt">NSMutableString</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController13filteredPostsGSaCSo19NSMutableDictionary_"></a>
+                    <a name="//apple_ref/swift/Property/filteredPosts" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController13filteredPostsGSaCSo19NSMutableDictionary_">filteredPosts</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>contains lectures that are filtered by search controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">filteredPosts</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSMutableDictionary</span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7CEInema22AllTableViewController22resultSearchControllerCSo18UISearchController"></a>
+                    <a name="//apple_ref/swift/Property/resultSearchController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7CEInema22AllTableViewController22resultSearchControllerCSo18UISearchController">resultSearchController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>search controller for user defined search</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">resultSearchController</span> <span class="o">=</span> <span class="kt">UISearchController</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController14viewWillAppearFS0_FSbT_"></a>
+                    <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController14viewWillAppearFS0_FSbT_">viewWillAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController17viewWillDisappearFS0_FSbT_"></a>
+                    <a name="//apple_ref/swift/Method/viewWillDisappear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController17viewWillDisappearFS0_FSbT_">viewWillDisappear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController11viewDidLoadFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController11viewDidLoadFS0_FT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewControllerP33_CAD1EA7DC748938EAB1B252466F6D3C37showMsgFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/showMsg(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewControllerP33_CAD1EA7DC748938EAB1B252466F6D3C37showMsgFS0_FSST_">showMsg(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show notification messages</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">showMsg</span><span class="p">(</span><span class="nv">msg</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>msg</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>message string that needs to be demonstrated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>none</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController10preParsingFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/preParsing()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController10preParsingFS0_FT_T_">preParsing()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Two main operations:</p>
+
+<ol>
+<li>Use MBProgressHUD to add the loading activity indicator, start parse() with a separate queue at background.</li>
+<li>Create a search controller then add to the tableview</li>
+</ol>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">preParsing</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nothing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController12beginParsingFS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/beginParsing()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController12beginParsingFS0_FT_T_">beginParsing()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>begin parse with NSXMLParser()</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">beginParsing</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser15didStartElementSS12namespaceURIGSqSS_13qualifiedNameGSqSS_10attributesGVSs10DictionaryCSo8NSObjectPSs9AnyObject___T_"></a>
+                    <a name="//apple_ref/swift/Method/parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser15didStartElementSS12namespaceURIGSqSS_13qualifiedNameGSqSS_10attributesGVSs10DictionaryCSo8NSObjectPSs9AnyObject___T_">parser(_:didStartElement:namespaceURI:qualifiedName:attributes:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser13didEndElementSS12namespaceURIGSqSS_13qualifiedNameGSqSS__T_"></a>
+                    <a name="//apple_ref/swift/Method/parser(_:didEndElement:namespaceURI:qualifiedName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser13didEndElementSS12namespaceURIGSqSS_13qualifiedNameGSqSS__T_">parser(_:didEndElement:namespaceURI:qualifiedName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser15foundCharactersGSqSS__T_"></a>
+                    <a name="//apple_ref/swift/Method/parser(_:foundCharacters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController6parserFS0_FTCSo11NSXMLParser15foundCharactersGSqSS__T_">parser(_:foundCharacters:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/Table%20view%20data%20source"></a>
+                  <a name="//apple_ref/swift/Section/Table view data source" class="dashAnchor"></a>
+                  <a href="#/Table%20view%20data%20source">
+                    <h3 class="section-name">Table view data source</h3>
+                  </a>
+                </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController27numberOfSectionsInTableViewFS0_FCSo11UITableViewSi"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSectionsInTableView(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController27numberOfSectionsInTableViewFS0_FCSo11UITableViewSi">numberOfSectionsInTableView(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController9tableViewFS0_FTCSo11UITableView21numberOfRowsInSectionSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController9tableViewFS0_FTCSo11UITableView21numberOfRowsInSectionSi_Si">tableView(_:numberOfRowsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController9tableViewFS0_FTCSo11UITableView21cellForRowAtIndexPathCSo11NSIndexPath_CSo15UITableViewCell"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAtIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController9tableViewFS0_FTCSo11UITableView21cellForRowAtIndexPathCSo11NSIndexPath_CSo15UITableViewCell">tableView(_:cellForRowAtIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController15prepareForSegueFS0_FTCSo17UIStoryboardSegue6senderGSqPSs9AnyObject___T_"></a>
+                    <a name="//apple_ref/swift/Method/prepareForSegue(_:sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController15prepareForSegueFS0_FTCSo17UIStoryboardSegue6senderGSqPSs9AnyObject___T_">prepareForSegue(_:sender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController26filterContentForSearchTextFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/filterContentForSearchText(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController26filterContentForSearchTextFS0_FSST_">filterContentForSearchText(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search function support.
+Split input string by &ldquo; &rdquo;(empty space) for multiple search.
+Keywords match both media title and presenter name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">filterContentForSearchText</span><span class="p">(</span><span class="nv">searchText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>String</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>user input string</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController38updateSearchResultsForSearchControllerFS0_FCSo18UISearchControllerT_"></a>
+                    <a name="//apple_ref/swift/Method/updateSearchResultsForSearchController(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController38updateSearchResultsForSearchControllerFS0_FCSo18UISearchControllerT_">updateSearchResultsForSearchController(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController27willDismissSearchControllerFS0_FCSo18UISearchControllerT_"></a>
+                    <a name="//apple_ref/swift/Method/willDismissSearchController(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController27willDismissSearchControllerFS0_FCSo18UISearchControllerT_">willDismissSearchController(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Interact with webserver whenever finish search</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">willDismissSearchController</span><span class="p">(</span><span class="nv">searchController</span><span class="p">:</span> <span class="kt">UISearchController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7CEInema22AllTableViewController12refreshTableFS0_FGSqCSo16UIRefreshControl_T_"></a>
+                    <a name="//apple_ref/swift/Method/refreshTable(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7CEInema22AllTableViewController12refreshTableFS0_FGSqCSo16UIRefreshControl_T_">refreshTable(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AllTableViewController</span><span class="p">:</span> <span class="kt">UITableViewController</span><span class="p">,</span> <span class="kt">NSXMLParserDelegate</span><span class="p">,</span> <span class="kt">UISearchResultsUpdating</span><span class="p">,</span> <span class="kt">UISearchControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external">ShaoweiSu</a>. All rights reserved. (Last updated: 2015-09-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

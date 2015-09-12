@@ -4,24 +4,21 @@ provides:
 nominals:
 - "C7CEInema16AllTableViewCell"
 class-members:
-- "mediaTitle"
-- "awakeFromNib"
-- "setSelected"
-- "mediaImage"
 - "mediaPresentor"
+- "mediaTitle"
 - "mediaDate"
+- "mediaImage"
 top-level:
-- "UILabel"
 - "UIImageView"
 - "UITableViewCell"
-- "Bool"
+- "UILabel"
 member-access:
-- "CSo6UIView"
 - "CSo8NSObject"
+- "C7CEInema16AllTableViewCell"
+- "CSo6UIView"
+- "CSo11UIResponder"
 - "CSo15UITableViewCell"
 - "PSs9AnyObject"
-- "CSo11UIResponder"
-- "C7CEInema16AllTableViewCell"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"
