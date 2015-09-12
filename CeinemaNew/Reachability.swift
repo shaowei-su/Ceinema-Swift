@@ -7,8 +7,12 @@
 //
 
 import Foundation
+/// Used to check Internet connection
 public class Reachability {
-    
+    /// Check if the network is connected
+    ///
+    /// :param: none
+    /// :returns: status bool value indicate whether the Internet is availble
     class func isConnectedToNetwork() -> Bool { 
         
         var Status:Bool = false

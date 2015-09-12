@@ -9,19 +9,33 @@
 import UIKit
 import QuartzCore
 
+/// Home view controller.
+/// Main functions
+///
+/// 1. Carousel paged scroll image controller
+/// 2. Visit Homepage button
+/// 3. Call CEI button
 class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarControllerDelegate {
 
-
+    /// visit "www.ceitraining.org" button outlet
     @IBOutlet weak var visitHomeButton: UIButton!
+    /// scroll view outlet
     @IBOutlet weak var pageScrollView: UIScrollView!
-    
+    /// page controller for paged scroll view to controll the behavior of homepage carousel
     @IBOutlet weak var pageControl: UIPageControl!
+    /// carousel image array
     var pageImages: [UIImage] = []
+    /// carousel image view array
     var pageViews: [UIImageView?] = []
-    
+    /// page view width
     var pageWidth: CGFloat? = nil
+    /// page view height
     var pageHeight: CGFloat? = nil
     
+    /// visit home button touched
+    ///
+    /// :param: sender button outlet
+    /// :returns: none
     @IBAction func VisitHomepage(sender: AnyObject) {
         
     }

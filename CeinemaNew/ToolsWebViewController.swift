@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+/// Simulation tool detail page
+///
 class ToolsWebViewController: UIViewController {
-
+    /// UI web view outlet
     @IBOutlet weak var toolWebView: UIWebView!
-    
+    /// Tool full URL
     var toolUrl: String = ""
     
     override func viewWillAppear(animated: Bool) {

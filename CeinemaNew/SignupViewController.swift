@@ -7,15 +7,19 @@
 //
 
 import UIKit
-
+/// Sign up page controller
+///
+/// Help user register for the newsletter
 class SignupViewController: UIViewController, UITextFieldDelegate {
-
+    /// user name text field outlet
     @IBOutlet weak var SignupName: UITextField! { didSet { SignupName.delegate = self } }
+    /// user email address field outlet
     @IBOutlet weak var SignupEmail: UITextField! { didSet { SignupEmail.delegate = self } }
-
+    /// Confirm button touched, call confirm()
     @IBAction func ConfirmButton(sender: AnyObject) {
         confirm()
     }
+    /// Cancel button touched, return to Home view
     @IBAction func CancelButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -30,7 +34,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
     }
-    
+    /// Show notifications with message string
+    ///
+    /// :param: msg message string that needs to be demontrated
+    /// :returns: none
     private func showMsg(msg:String) {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
@@ -83,7 +90,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(textField: UITextField) {
         animateViewMoving(false, moveValue: 210)
     }
-    
+    /// Change view position when keyboard shows up
+    ///
+    /// :param: up indicate the direction of keyboard 
+    /// :param: moveValue indicate the amount of distance need to move
+    /// :returns: none
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         var movementDuration:NSTimeInterval = 0.3
         var movement:CGFloat = ( up ? -moveValue : moveValue)

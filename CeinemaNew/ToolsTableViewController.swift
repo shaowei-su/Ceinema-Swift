@@ -8,12 +8,20 @@
 
 import UIKit
 import SWXMLHash
-
+/// Simulation tools table view controller
+///
+/// Main functions:
+///
+/// 1. Load simulation tools from web server thru xml file
+/// 2. Segue to tool detail page
 class ToolsTableViewController: UITableViewController {
-    
+    /// table view outlet
     @IBOutlet var toolsData: UITableView!
+    /// xml indexer by SWXMLHash
     var xmlParsed: XMLIndexer?
+    /// count the number of tools
     var toolCounter = 0
+    /// map from index in table view to xml indexer
     var toolMap = Dictionary<Int, Int>()
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +43,10 @@ class ToolsTableViewController: UITableViewController {
         }
         
     }
-    
+    /// Show notifications with message string
+    ///
+    /// :param: msg message string that needs to be demontrated
+    /// :returns: none
     private func showMsg(msg:String) {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()

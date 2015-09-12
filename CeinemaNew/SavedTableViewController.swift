@@ -10,10 +10,17 @@ import UIKit
 import CoreData
 import WebImage
 
-
+/// Favorites table view controller
+///
+/// Main functions:
+///
+/// 1. Load saved favorites to table view
+/// 2. Modify Core Data database tuples
+/// 3. Seque to lecture detail page
 class SavedTableViewController: UITableViewController {
-
+    /// Table view outlet
     @IBOutlet var savedTableView: UITableView!
+    /// Core data array
     var media: [NSManagedObject] = []
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +42,10 @@ class SavedTableViewController: UITableViewController {
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
     }
-    
+    /// Show notifications with message string
+    ///
+    /// :param: msg message string that needs to be demontrated
+    /// :returns: none
     private func showMsg(msg:String) {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()

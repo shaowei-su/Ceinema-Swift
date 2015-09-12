@@ -10,11 +10,22 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+/// Global controller of this app.
+/// Main functions:
+///
+/// 1. Set up Google Analytics 
+/// 2. Set up Core Data usage
+/// 3. Set up App appearance
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    /// Google Analytics Tracker instance
     var tracker: GAITracker?
-    
+    /// set up Google Analytics as a global function that can be reached by other controller class.
+    /// Need to specify unique trackID here
+    ///
+    /// :param: none
+    /// :returns: none
     class func setupGoogleAnalytics() {
         GAI.sharedInstance().trackUncaughtExceptions = true;
         GAI.sharedInstance().dispatchInterval = 20
@@ -72,22 +83,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Core Data stack
-    
+    /// The directory the application uses to store the Core Data store file.
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.razeware.HitList" in the application's documents Application Support directory.
+        
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1] as! NSURL
         }()
     
+    /// The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
     lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+
         let modelURL = NSBundle.mainBundle().URLForResource("CeinemaNew", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
     
+    /// The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+    /// Create the coordinator and store
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
+        
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CeinemaNew.sqlite")
         var error: NSError? = nil
@@ -109,8 +122,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return coordinator
         }()
     
+    /// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
+    /// This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
     lazy var managedObjectContext: NSManagedObjectContext? = {
-        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+       
         let coordinator = self.persistentStoreCoordinator
         if coordinator == nil {
             return nil
@@ -121,13 +136,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }()
     
     // MARK: - Core Data Saving support
-    
+    /// Replace this implementation with code to handle the error appropriately.
+    /// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
     func saveContext () {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil
             if moc.hasChanges && !moc.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
                 NSLog("Unresolved error \(error), \(error!.userInfo)")
                 abort()
             }

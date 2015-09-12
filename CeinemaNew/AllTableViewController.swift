@@ -10,24 +10,43 @@ import UIKit
 import WebImage
 import Foundation
 
+/// Controller of lecture table view.
+/// 
+/// Main functions:
+///
+/// 1. Load table view with lectures info parsed from web server
+/// 2. Search controller supports user defined search
+/// 3. Drag Down refresh
+/// 4. Segue to lecture detail page
 class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
     
     
     
-    
+    /// search bar outlet
     @IBOutlet weak var searchDisplay: UISearchBar!
+    /// table view outlet
     @IBOutlet var allData: UITableView!
+    /// xml parser
     var parser = NSXMLParser()
+    /// posts contains all parsed lecture info (multiple key-value pairs saved in elements)
     var posts = NSMutableArray()
+    /// multiple key-value pairs saved in elements
     var elements = NSMutableDictionary()
+    /// element stores xml file element name parsed in
     var element = NSString()
+    /// mediaTitle parsed in
     var mediaTitle = NSMutableString()
+    /// presenterName parsed in
     var presenterName = NSMutableString()
+    /// mediaDateReleased parsed in
     var mediaDateReleased = NSMutableString()
+    /// mediaThumbPath parsed in
     var mediaThumbPath = NSMutableString()
+    /// mediaID parsed in
     var mediaID = NSMutableString()
-    
+    /// contains lectures that are filtered by search controller
     var filteredPosts = [NSMutableDictionary]()
+    /// search controller for user defined search
     var resultSearchController = UISearchController()
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +78,10 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         
     }
     
+    /// Show notification messages
+    ///
+    /// :param: msg message string that needs to be demonstrated
+    /// :returns: none
     private func showMsg(msg:String) {
         var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
@@ -100,13 +123,13 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         })()
     }
 
+    /// begin parse with NSXMLParser()
     func beginParsing() {
         posts = []
         parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://ceitraining.org/web_services/media.cfc?method=iosGetMedia&sortBy=media_date_released&sortByOrder=DESC")))!
         parser.delegate = self
         parser.parse()
     }
-    //XMLParser Methods
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         element = elementName

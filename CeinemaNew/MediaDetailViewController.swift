@@ -16,29 +16,51 @@ import MessageUI
 import Social
 import MobileCoreServices
 
+/// Media detail controller
+///
+/// Main functions
+///
+/// 1. Load lecture detail thru XML file
+/// 2. Play video
+/// 3. Save "Favorites" to core data
+/// 4. Share thru Activity Controller
+/// 5. Report video review to CEI team thru email
 class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
-    
+    /// media title outlet
     @IBOutlet weak var mediaDetailTitle: UILabel!
-    
+    /// media date outlet
     @IBOutlet weak var mediaDateLabel: UILabel!
+    /// presenterName outlet
     @IBOutlet weak var presenterNameLabel: UILabel!
+    /// presenter title outlet, eg.MD, PHD...
     @IBOutlet weak var presenterTitleLabel: UILabel!
+    /// presenter employer outlet, eg. U of R..
     @IBOutlet weak var presenterEmpLabel: UILabel!
+    /// media thumbnail image outlet
     @IBOutlet weak var mediaImage: UIImageView!
+    /// learning objectives outlet
     @IBOutlet weak var objContentsLabel: UILabel!
+    
+    /// play button touched, then launch MPVC
+    ///
+    /// :param: play button outlet
+    /// :returns: none
     @IBAction func playButtonTouched(sender: UIButton) {
         playMovie()
     }
+    /// detail view outlet
     @IBOutlet var mediaDetailView: UIView!
-    
+    /// share button outlet
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    
+    /// media title
     var mediaTitle: String = ""
+    /// media ID
     var mediaID: String = ""
     var mediaDate: String = ""
     var presenterName: String = ""
     var presenterLastName: String = ""
     var presenterCred: String = ""
+    /// presenter title, eg. Medical Officer..
     var presenterTitle: String = ""
     var presenterEmp: String = ""
     var imgThumbnail: String = ""
@@ -46,11 +68,13 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     var videoFormatFileName: String = ""
     var objectives: String = ""
     
-    
+    /// url to fetch media detail info thru xml
     var fetchUrl: String = ""
+    /// media resources url
     var mediaUrl: String = ""
-    
+    /// xml data parsed in
     var xmlData: NSData?
+    /// xml indexer from SWXMLHash
     var xmlParsed: XMLIndexer?
     
     override func viewWillAppear(animated: Bool) {

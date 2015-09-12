@@ -8,26 +8,18 @@
 
 import UIKit
 
+/// Contains the prototype info of lecture table view
 class AllTableViewCell: UITableViewCell {
     
 
-    
+    /// Lecture image thumbnail outlet
     @IBOutlet weak var mediaImage: UIImageView!
+    /// Lecture title label outlet
     @IBOutlet weak var mediaTitle: UILabel!
-
+    /// Lecture presentor label outlet
     @IBOutlet weak var mediaPresentor: UILabel!
+    /// Lecture date label outlet
     @IBOutlet weak var mediaDate: UILabel!
 
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
