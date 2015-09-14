@@ -749,6 +749,9 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-k0-ABq">
+                                            <rect key="frame" x="446" y="8" width="113" height="60"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="vA3-mu-rWq" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leading" constant="20" id="6Hu-2b-PvN"/>
@@ -768,6 +771,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="toolNewtag" destination="2K2-k0-ABq" id="Ya3-NS-R7B"/>
                                     <outlet property="toolPostingDate" destination="qah-vq-rcr" id="Qnb-2Z-Jsv"/>
                                     <outlet property="toolPublisher" destination="vA3-mu-rWq" id="CRw-RF-mAO"/>
                                     <outlet property="toolTitle" destination="Ebp-sL-fa8" id="a9w-U3-muM"/>

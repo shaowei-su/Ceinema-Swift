@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func setupGoogleAnalytics() {
         GAI.sharedInstance().trackUncaughtExceptions = true;
         GAI.sharedInstance().dispatchInterval = 20
-        GAI.sharedInstance().logger.logLevel = .Verbose
+        //GAI.sharedInstance().logger.logLevel = .Verbose
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
             appDelegate.tracker = GAI.sharedInstance().trackerWithTrackingId("UA-66666888-1")
         }

@@ -13,4 +13,5 @@ class ToolsTableViewCell: UITableViewCell {
     @IBOutlet weak var toolTitle: UILabel!
     @IBOutlet weak var toolPostingDate: UILabel!
     @IBOutlet weak var toolPublisher: UILabel!
+    @IBOutlet weak var toolNewtag: UIImageView!
 }

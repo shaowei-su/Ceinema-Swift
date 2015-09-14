@@ -19,10 +19,6 @@ class ToolsTableViewController: UITableViewController {
     @IBOutlet var toolsData: UITableView!
     /// xml indexer by SWXMLHash
     var xmlParsed: XMLIndexer?
-    /// count the number of tools
-    var toolCounter = 0
-    /// map from index in table view to xml indexer
-    var toolMap = Dictionary<Int, Int>()
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -54,23 +50,13 @@ class ToolsTableViewController: UITableViewController {
     
     /// Parse XML file by SWXMLHash. 
     /// After that, eliminate tuples that marked as "hide"
-    /// The map "toolmap" will map the index in table view to the index in parsed XML Indexer
+    ///
     ///
     /// :param: nothing
     /// :returns: nothing
     func beginParsing() {
-        let xmlData = NSData(contentsOfURL: NSURL(string: "http://ceitraining.org/xml/live/simulations.xml")!)!
+        let xmlData = NSData(contentsOfURL: NSURL(string: "http://ceitraining.org/web_services/simulation.cfc?method=getSimulations&hide=0")!)!
         xmlParsed = SWXMLHash.parse(xmlData)
-        //to map the actual index with the row index
-        //toolCounter indicates the real number of rows
-        var index = 0
-        for elem in xmlParsed!["simulations"]["simulation"] {
-            if elem["hide"].element?.text != "true" {
-                toolMap[toolCounter] = index
-                toolCounter++
-            }
-            index++
-        }
     }
 
     // MARK: - Table view data source
@@ -84,24 +70,26 @@ class ToolsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return toolCounter
+        return xmlParsed!["data"]["row"].all.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ToolsTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("ToolCell", forIndexPath: indexPath) as! ToolsTableViewCell
-        var rowIndex = toolMap[indexPath.row]!
 
-        if let cellTitle = xmlParsed!["simulations"]["simulation"][rowIndex]["simulation_short_title"].element?.text {
+        if let cellTitle = xmlParsed!["data"]["row"][indexPath.row]["simulationTitle"].element?.text {
             cell.toolTitle?.text = cellTitle
         }
         
-        if let cellPublisher = xmlParsed!["simulations"]["simulation"][rowIndex]["publisher"].element?.text {
+        if let cellPublisher = xmlParsed!["data"]["row"][indexPath.row]["simulationPublisher"].element?.text {
             cell.toolPublisher?.text = cellPublisher
         }
-        if let cellPublishDate = xmlParsed!["simulations"]["simulation"][rowIndex]["tool_released_date"].element?.text {
+        if let cellPublishDate = xmlParsed!["data"]["row"][indexPath.row]["simulationDate"].element?.text {
             var cellPublishDateModified = cellPublishDate
-            cellPublishDateModified = cellPublishDateModified.stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+            cellPublishDateModified = cellPublishDateModified.stringByReplacingOccurrencesOfString(" 00:00:00.0", withString: "")
             cell.toolPostingDate?.text = cellPublishDateModified
+            
+            //check for new updates
+            
         }
         return cell
         
@@ -111,10 +99,8 @@ class ToolsTableViewController: UITableViewController {
         if segue.identifier == "ShowToolWebSegue" {
             if let destination = segue.destinationViewController as? ToolsWebViewController {
                 if let toolIndex = tableView.indexPathForSelectedRow()?.row {
-                    let toolIndexModified = toolMap[toolIndex]!
-                    let shortUrl = xmlParsed!["simulations"]["simulation"][toolIndexModified]["simulation_url"].element?.text
+                    let shortUrl = xmlParsed!["data"]["row"][toolIndex]["simulationUrl"].element?.text
                     let siUrl = NSString(format: "http://m.ceitraining.org/app/guidelines/%@/index.jsp", shortUrl!) as String
-                    //destination.toolUrl = self.tools[toolIndex].siUrl
                     destination.toolUrl = siUrl
                 }
             }
