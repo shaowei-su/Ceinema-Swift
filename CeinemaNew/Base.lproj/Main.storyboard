@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="1111" y="1079"/>
         </scene>
-        <!--Ceinema-->
+        <!--CEInema-->
         <scene sceneID="NyE-4q-bqS">
             <objects>
                 <viewController id="I3r-8H-eqV" customClass="HomeViewController" customModule="CEInema" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +226,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                             <constraint firstItem="2nA-vs-2j3" firstAttribute="leading" secondItem="8hI-JN-msJ" secondAttribute="leading" id="GxT-OG-9ZA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ceinema" id="YzH-J4-6l4"/>
+                    <navigationItem key="navigationItem" title="CEInema" id="YzH-J4-6l4"/>
                     <connections>
                         <outlet property="pageControl" destination="avY-Pd-sFC" id="bmK-iN-KHG"/>
                         <outlet property="pageScrollView" destination="GWc-Vl-KX8" id="cQs-i2-meN"/>
@@ -732,7 +732,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="toolPublisher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vA3-mu-rWq">
-                                            <rect key="frame" x="20" y="46" width="537" height="17"/>
+                                            <rect key="frame" x="20" y="49" width="537" height="17"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -744,13 +744,13 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="toolTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-sL-fa8">
-                                            <rect key="frame" x="8" y="8" width="78" height="33"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                            <rect key="frame" x="15" y="8" width="67" height="39"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-k0-ABq">
-                                            <rect key="frame" x="446" y="8" width="113" height="60"/>
+                                            <rect key="frame" x="0.0" y="-2" width="46" height="40"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -759,10 +759,10 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         <constraint firstAttribute="trailing" secondItem="vA3-mu-rWq" secondAttribute="trailing" constant="10" id="AO0-NZ-h2Y"/>
                                         <constraint firstItem="Ebp-sL-fa8" firstAttribute="top" secondItem="xaK-fB-oEm" secondAttribute="top" constant="8" id="Enc-un-puG"/>
                                         <constraint firstItem="qah-vq-rcr" firstAttribute="top" secondItem="vA3-mu-rWq" secondAttribute="bottom" constant="5" id="PCH-QH-y7r"/>
-                                        <constraint firstItem="vA3-mu-rWq" firstAttribute="top" secondItem="Ebp-sL-fa8" secondAttribute="bottom" constant="5" id="RnG-H7-rd5"/>
-                                        <constraint firstItem="qah-vq-rcr" firstAttribute="top" secondItem="vA3-mu-rWq" secondAttribute="bottom" constant="5" id="ZQR-2P-SLy"/>
+                                        <constraint firstItem="vA3-mu-rWq" firstAttribute="top" secondItem="Ebp-sL-fa8" secondAttribute="bottom" constant="2" id="RnG-H7-rd5"/>
+                                        <constraint firstItem="qah-vq-rcr" firstAttribute="top" secondItem="vA3-mu-rWq" secondAttribute="bottom" constant="2" id="ZQR-2P-SLy"/>
                                         <constraint firstAttribute="bottom" secondItem="qah-vq-rcr" secondAttribute="bottom" constant="5" id="fhu-IA-KbU"/>
-                                        <constraint firstItem="Ebp-sL-fa8" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leading" constant="8" id="uEn-bp-0lk"/>
+                                        <constraint firstItem="Ebp-sL-fa8" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leading" constant="15" id="uEn-bp-0lk"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">

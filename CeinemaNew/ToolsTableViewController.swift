@@ -89,6 +89,18 @@ class ToolsTableViewController: UITableViewController {
             cell.toolPostingDate?.text = cellPublishDateModified
             
             //check for new updates
+            var toolDate = cellPublishDateModified.toDate()
+            var components = NSDateComponents()
+            components.setValue(-3, forComponent: NSCalendarUnit.CalendarUnitMonth);
+            let date: NSDate = NSDate()
+            var expirationDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+            println("date: \(toolDate) expireDate: \(expirationDate)")
+            var compareOrder = toolDate!.compare(expirationDate!)
+            if compareOrder == NSComparisonResult.OrderedDescending {
+                cell.toolNewtag.image = UIImage(named: "newtag")
+            } else {
+                cell.toolNewtag.image = nil
+            }
             
         }
         return cell
@@ -106,5 +118,22 @@ class ToolsTableViewController: UITableViewController {
             }
         }
     }
-
 }
+
+extension String {
+    /// Extension of String to easily convert from string to date
+    ///
+    /// :param: format string the format of inputed string date
+    /// :returns: NSDate the NSDate generated
+    func toDate(let format:String = "yyyy-MM-dd") -> NSDate? {
+        var formatter:NSDateFormatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.timeZone = NSTimeZone()
+        formatter.dateFormat = format
+        
+        return formatter.dateFromString(self)
+    }
+}
+
+
+
