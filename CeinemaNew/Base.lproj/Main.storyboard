@@ -339,7 +339,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="objContents" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLv-qt-FLx">
-                                        <rect key="frame" x="20" y="326" width="560" height="18"/>
+                                        <rect key="frame" x="20" y="325" width="560" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -732,25 +732,29 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="toolPublisher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vA3-mu-rWq">
-                                            <rect key="frame" x="20" y="49" width="537" height="17"/>
+                                            <rect key="frame" x="20" y="51" width="537" height="17"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="toolPostingDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qah-vq-rcr">
-                                            <rect key="frame" x="20" y="68" width="101" height="17"/>
+                                            <rect key="frame" x="20" y="69" width="101" height="17"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="toolTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-sL-fa8">
-                                            <rect key="frame" x="15" y="8" width="67" height="39"/>
+                                            <rect key="frame" x="15" y="8" width="67" height="41"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-k0-ABq">
-                                            <rect key="frame" x="0.0" y="-2" width="46" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2K2-k0-ABq">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="S49-V2-2jg"/>
+                                                <constraint firstAttribute="height" constant="40" id="gRn-aX-MLX"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -759,13 +763,19 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         <constraint firstAttribute="trailing" secondItem="vA3-mu-rWq" secondAttribute="trailing" constant="10" id="AO0-NZ-h2Y"/>
                                         <constraint firstItem="Ebp-sL-fa8" firstAttribute="top" secondItem="xaK-fB-oEm" secondAttribute="top" constant="8" id="Enc-un-puG"/>
                                         <constraint firstItem="qah-vq-rcr" firstAttribute="top" secondItem="vA3-mu-rWq" secondAttribute="bottom" constant="5" id="PCH-QH-y7r"/>
+                                        <constraint firstItem="2K2-k0-ABq" firstAttribute="top" secondItem="xaK-fB-oEm" secondAttribute="top" id="R1S-TF-E3v"/>
                                         <constraint firstItem="vA3-mu-rWq" firstAttribute="top" secondItem="Ebp-sL-fa8" secondAttribute="bottom" constant="2" id="RnG-H7-rd5"/>
+                                        <constraint firstItem="2K2-k0-ABq" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leadingMargin" constant="-16" id="Vxn-Cr-mSJ"/>
+                                        <constraint firstItem="2K2-k0-ABq" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leading" id="Xgb-Dj-iIP"/>
                                         <constraint firstItem="qah-vq-rcr" firstAttribute="top" secondItem="vA3-mu-rWq" secondAttribute="bottom" constant="2" id="ZQR-2P-SLy"/>
                                         <constraint firstAttribute="bottom" secondItem="qah-vq-rcr" secondAttribute="bottom" constant="5" id="fhu-IA-KbU"/>
                                         <constraint firstItem="Ebp-sL-fa8" firstAttribute="leading" secondItem="xaK-fB-oEm" secondAttribute="leading" constant="15" id="uEn-bp-0lk"/>
+                                        <constraint firstItem="2K2-k0-ABq" firstAttribute="top" secondItem="xaK-fB-oEm" secondAttribute="topMargin" constant="-10" id="vDc-bj-05F"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="Vxn-Cr-mSJ"/>
+                                            <exclude reference="vDc-bj-05F"/>
                                             <exclude reference="PCH-QH-y7r"/>
                                         </mask>
                                     </variation>
@@ -849,7 +859,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name(optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-9g-sI9" userLabel="Name">
-                                                <rect key="frame" x="28" y="240" width="544" height="30"/>
+                                                <rect key="frame" x="28" y="238" width="544" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="400" id="ofV-Hz-bdJ"/>
                                                     <constraint firstAttribute="height" constant="30" id="vaM-7r-BsS"/>
@@ -863,12 +873,12 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                 </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HC6-kb-WsS" userLabel="Email Address">
-                                                <rect key="frame" x="28" y="288" width="544" height="30"/>
+                                                <rect key="frame" x="28" y="286" width="544" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCG-Z0-dn2" userLabel="Confirm">
-                                                <rect key="frame" x="28" y="343" width="262" height="40"/>
+                                                <rect key="frame" x="28" y="341" width="262" height="40"/>
                                                 <color key="backgroundColor" red="0.35410979279999999" green="0.67008974460000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="XoA-Vv-Bfa"/>
@@ -888,7 +898,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Moz-Az-5jh" userLabel="Cancel">
-                                                <rect key="frame" x="310" y="343" width="262" height="40"/>
+                                                <rect key="frame" x="310" y="341" width="262" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="D9F-Va-Qel"/>
@@ -919,13 +929,13 @@ Persons using this website and application agree to indemnify and hold harmless 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Continuing medical education events throughout New York State" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-gU-PX0">
-                                                <rect key="frame" x="39" y="143" width="523" height="21"/>
+                                                <rect key="frame" x="39" y="142" width="523" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Other learning resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-tt-ucS">
-                                                <rect key="frame" x="39" y="169" width="200" height="21"/>
+                                                <rect key="frame" x="39" y="168" width="200" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
