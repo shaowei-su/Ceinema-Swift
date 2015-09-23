@@ -11,6 +11,7 @@ import UIKit
 ///
 class ToolsWebViewController: UIViewController {
     /// UI web view outlet
+
     @IBOutlet weak var toolWebView: UIWebView!
     /// Tool full URL
     var toolUrl: String = ""
@@ -47,5 +48,20 @@ class ToolsWebViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func rewindWebView(sender: AnyObject) {
+        toolWebView.goBack()
+    }
+    @IBAction func forwardWebView(sender: AnyObject) {
+        toolWebView.goForward()
+    }
 
+    @IBAction func stopAndClose(sender: AnyObject) {
+        toolWebView.stopLoading()
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+    @IBAction func refreshWebView(sender: AnyObject) {
+        toolWebView.reload()
+    }
 }

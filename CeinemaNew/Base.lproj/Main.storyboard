@@ -482,25 +482,70 @@ Persons using this website and application agree to indemnify and hold harmless 
                         <viewControllerLayoutGuide type="top" id="GLj-Ss-IFu"/>
                         <viewControllerLayoutGuide type="bottom" id="gMA-2r-Msg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k0h-45-kzS">
+                    <view key="view" contentMode="scaleToFill" id="Ad8-gY-NKD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-rV-wS4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVi-1G-WPg">
+                                <rect key="frame" x="0.0" y="508" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="759" id="VyA-sK-wH2"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="Wet-X1-CJ9">
+                                        <connections>
+                                            <action selector="stopAndClose:" destination="BH5-zZ-TTE" id="erk-j8-mOh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="obN-4E-dn7"/>
+                                    <barButtonItem systemItem="refresh" id="7as-qg-lZQ">
+                                        <connections>
+                                            <action selector="refreshWebView:" destination="BH5-zZ-TTE" id="XPr-xf-f0l"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="w4P-H0-HFl"/>
+                                    <barButtonItem systemItem="rewind" id="Khi-Ue-Nre">
+                                        <connections>
+                                            <action selector="rewindWebView:" destination="BH5-zZ-TTE" id="eXW-iL-CQq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Uz-xO-MQK"/>
+                                    <barButtonItem systemItem="fastForward" id="htg-sV-Au2">
+                                        <connections>
+                                            <action selector="forwardWebView:" destination="BH5-zZ-TTE" id="2iO-Z6-QEp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VyA-sK-wH2"/>
+                                    </mask>
+                                </variation>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUq-Rg-sRa">
+                                <rect key="frame" x="0.0" y="64" width="600" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4EF-rV-wS4" firstAttribute="top" secondItem="k0h-45-kzS" secondAttribute="top" id="D3m-Jd-dWH"/>
-                            <constraint firstAttribute="trailing" secondItem="4EF-rV-wS4" secondAttribute="trailing" id="ZVK-ar-LbK"/>
-                            <constraint firstItem="4EF-rV-wS4" firstAttribute="leading" secondItem="k0h-45-kzS" secondAttribute="leading" id="nkQ-ge-s0m"/>
-                            <constraint firstItem="gMA-2r-Msg" firstAttribute="top" secondItem="4EF-rV-wS4" secondAttribute="bottom" constant="-50" id="xt6-tW-GTm"/>
+                            <constraint firstAttribute="trailing" secondItem="bUq-Rg-sRa" secondAttribute="trailing" id="Rcu-ZH-HZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="rVi-1G-WPg" secondAttribute="trailing" id="VX9-YA-Zqu"/>
+                            <constraint firstItem="bUq-Rg-sRa" firstAttribute="bottom" secondItem="rVi-1G-WPg" secondAttribute="top" id="b1F-HV-sjZ"/>
+                            <constraint firstItem="rVi-1G-WPg" firstAttribute="leading" secondItem="Ad8-gY-NKD" secondAttribute="leading" id="fsW-ab-VU9"/>
+                            <constraint firstItem="bUq-Rg-sRa" firstAttribute="top" secondItem="Ad8-gY-NKD" secondAttribute="top" constant="-64" id="h5N-0b-PGh"/>
+                            <constraint firstItem="bUq-Rg-sRa" firstAttribute="leading" secondItem="rVi-1G-WPg" secondAttribute="leading" id="jEk-w9-d5o"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rVi-1G-WPg" secondAttribute="bottom" constant="48" id="qwV-TO-3ni"/>
+                            <constraint firstItem="bUq-Rg-sRa" firstAttribute="top" secondItem="GLj-Ss-IFu" secondAttribute="bottom" id="uCv-14-Iyv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h5N-0b-PGh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="toolWebView" destination="4EF-rV-wS4" id="XJF-Tb-4MB"/>
+                        <outlet property="toolWebView" destination="bUq-Rg-sRa" id="gDF-3S-95E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeZ-yc-b2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
