@@ -25,50 +25,44 @@ class SavedTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if Reachability.isConnectedToNetwork() == true {
-            loadData()
+            try! self.loadData()
         } else {
             showMsg("Please check your internet connection, thanks!")
         }
         
-        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
         }
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         //add google analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
-            appDelegate.tracker!.send(build as [NSObject : AnyObject])
+            appDelegate.tracker!.send(build as! [NSObject : AnyObject])
         }
     }
     /// Show notifications with message string
     ///
-    /// :param: msg message string that needs to be demontrated
-    /// :returns: none
+    /// - parameter msg: message string that needs to be demontrated
+    /// - returns: none
     private func showMsg(msg:String) {
-        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        let alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
     }
     
     /// Fetch data from Core Data and then reload the table view
     ///
-    func loadData() {
+    func loadData() throws {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "LocalSavedMedia" )
         
-        var error: NSError?
-        
-        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]?
-        if let results = fetchedResults {
-            media = results
-        } else {
-            println("something wrong with the fetch")
-        }
-        
-        savedTableView.reloadData()
+        media = try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+        self.savedTableView.reloadData()
+
     }
     
     override func setEditing(editing: Bool, animated: Bool)  {
@@ -108,7 +102,7 @@ class SavedTableViewController: UITableViewController {
         cell.mediaDate?.text = mediaCell.valueForKey("mediaDate") as! String?
         cell.mediaPresentor?.text = mediaCell.valueForKey("presenterName") as! String?
         
-        var imagePath = mediaCell.valueForKey("mediaImage") as! String?
+        let imagePath = mediaCell.valueForKey("mediaImage") as! String?
         if imagePath!.isEmpty {
             cell.mediaImage?.image = UIImage(named: "logo")
         } else {
@@ -135,7 +129,10 @@ class SavedTableViewController: UITableViewController {
             let managedContext = appDelegate.managedObjectContext!
             managedContext.deleteObject(media[indexPath.row] as NSManagedObject)
             self.media.removeAtIndex(indexPath.row)
-            managedContext.save(nil)
+            do {
+                try managedContext.save()
+            } catch _ {
+            }
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -144,7 +141,7 @@ class SavedTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowSavedMediaSegue" {
             if let destination = segue.destinationViewController as? MediaDetailViewController {
-                if let mediaIndex = tableView.indexPathForSelectedRow()?.row {
+                if let mediaIndex = tableView.indexPathForSelectedRow?.row {
                 destination.mediaID = media[mediaIndex].valueForKey("id") as! NSString as String
                 }
             }

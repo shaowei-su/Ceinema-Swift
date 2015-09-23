@@ -34,16 +34,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     
     /// visit home button touched
     ///
-    /// :param: sender button outlet
-    /// :returns: none
+    /// - parameter sender: button outlet
+    /// - returns: none
     @IBAction func VisitHomepage(sender: AnyObject) {
         
     }
     
     /// Call CEI line when the "call" button touched
     ///
-    /// :param: AnyObject passed in from storyboard
-    /// :returns: nothing
+    /// - parameter AnyObject: passed in from storyboard
+    /// - returns: nothing
     @IBAction func callCEI(sender: AnyObject) {
         let phone = "tel://8666372342"
         let urlPhone: NSURL = NSURL(string: phone)!
@@ -55,7 +55,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
         
         ///add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
+            print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
@@ -97,13 +98,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     /// Move the carousel pages automatically to the next page.
     /// To the first page if the reaches the end
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     func moveToNextPage (){
         
-        var pageWidth:CGFloat = CGRectGetWidth(self.pageScrollView.frame)
+        let pageWidth:CGFloat = CGRectGetWidth(self.pageScrollView.frame)
         let maxWidth:CGFloat = pageWidth * 4
-        var contentOffset:CGFloat = self.pageScrollView.contentOffset.x
+        let contentOffset:CGFloat = self.pageScrollView.contentOffset.x
         //move to next page, to the begining if reach the tail
         var slideToX = contentOffset + pageWidth
         
@@ -115,15 +116,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     
     /// Dynamically load pageview on the paged scroll view
     ///
-    /// :param: int one int number indicate the position of current page
-    /// :returns: nothing
+    /// - parameter int: one int number indicate the position of current page
+    /// - returns: nothing
     func loadPage(page: Int) {
         
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             return
         }
-        if let pageView = pageViews[page] {
+        if let _ = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
 
@@ -148,8 +149,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     
     /// Remove a page from the scroll view and reset the container array
     ///
-    /// :param: int one int number indicate the position of current page
-    /// :returns: nothing
+    /// - parameter int: one int number indicate the position of current page
+    /// - returns: nothing
     func purgePage(page: Int) {
         
         if page < 0 || page >= pageImages.count {
@@ -167,8 +168,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     /// Dynamically load current page on scroll view.
     /// After determining the position, call loadPage() and purgePage().
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     func loadVisiblePages() {
         
         // First, determine which page is currently visible
@@ -230,8 +231,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
     /// 2. Page three: perform segue and move the the tools page
     /// 3. page four: perform segue and move to newsletter sign up page
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     func tapDetected() {
         let pageCurrent = pageControl.currentPage
         switch pageCurrent {
@@ -245,15 +246,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITabBarContro
             case 3:
                 performSegueWithIdentifier("homeToSignupSegue", sender: nil)
             default:
-                println("Single Tap on imageview at \(pageCurrent)")
+                print("Single Tap on imageview at \(pageCurrent)")
         }
         
     }
     
     /// Switch top view to the tab bar: 2
     ///
-    /// :param: none
-    /// :returns: none
+    /// - parameter none:
+    /// - returns: none
     func switch2ToolTab() {
         self.tabBarController!.selectedIndex = 2
     }

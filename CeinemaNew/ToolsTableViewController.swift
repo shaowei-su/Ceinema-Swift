@@ -24,7 +24,8 @@ class ToolsTableViewController: UITableViewController {
         
         //add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description
+            print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
@@ -41,10 +42,10 @@ class ToolsTableViewController: UITableViewController {
     }
     /// Show notifications with message string
     ///
-    /// :param: msg message string that needs to be demontrated
-    /// :returns: none
+    /// - parameter msg: message string that needs to be demontrated
+    /// - returns: none
     private func showMsg(msg:String) {
-        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        let alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
     }
     
@@ -52,8 +53,8 @@ class ToolsTableViewController: UITableViewController {
     /// After that, eliminate tuples that marked as "hide"
     ///
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     func beginParsing() {
         let xmlData = NSData(contentsOfURL: NSURL(string: "http://ceitraining.org/web_services/simulation.cfc?method=getSimulations&hide=0")!)!
         xmlParsed = SWXMLHash.parse(xmlData)
@@ -70,7 +71,10 @@ class ToolsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return xmlParsed!["data"]["row"].all.count
+        if Reachability.isConnectedToNetwork() == true {
+            return xmlParsed!["data"]["row"].all.count
+        } else {
+            return 0        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -89,13 +93,13 @@ class ToolsTableViewController: UITableViewController {
             cell.toolPostingDate?.text = cellPublishDateModified
             
             //check for new updates
-            var toolDate = cellPublishDateModified.toDate()
-            var components = NSDateComponents()
-            components.setValue(-3, forComponent: NSCalendarUnit.CalendarUnitMonth);
+            let toolDate = cellPublishDateModified.toDate()
+            let components = NSDateComponents()
+            components.setValue(-3, forComponent: NSCalendarUnit.Month);
             let date: NSDate = NSDate()
-            var expirationDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
-            println("date: \(toolDate) expireDate: \(expirationDate)")
-            var compareOrder = toolDate!.compare(expirationDate!)
+            let expirationDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))
+            //print("date: \(toolDate) expireDate: \(expirationDate)")
+            let compareOrder = toolDate!.compare(expirationDate!)
             if compareOrder == NSComparisonResult.OrderedDescending {
                 cell.toolNewtag.image = UIImage(named: "newtag")
             } else {
@@ -110,7 +114,7 @@ class ToolsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowToolWebSegue" {
             if let destination = segue.destinationViewController as? ToolsWebViewController {
-                if let toolIndex = tableView.indexPathForSelectedRow()?.row {
+                if let toolIndex = tableView.indexPathForSelectedRow?.row {
                     let shortUrl = xmlParsed!["data"]["row"][toolIndex]["simulationUrl"].element?.text
                     let siUrl = NSString(format: "http://m.ceitraining.org/app/guidelines/%@/index.jsp", shortUrl!) as String
                     destination.toolUrl = siUrl
@@ -123,10 +127,10 @@ class ToolsTableViewController: UITableViewController {
 extension String {
     /// Extension of String to easily convert from string to date
     ///
-    /// :param: format string the format of inputed string date
-    /// :returns: NSDate the NSDate generated
+    /// - parameter format: string the format of inputed string date
+    /// - returns: NSDate the NSDate generated
     func toDate(let format:String = "yyyy-MM-dd") -> NSDate? {
-        var formatter:NSDateFormatter = NSDateFormatter()
+        let formatter:NSDateFormatter = NSDateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         formatter.timeZone = NSTimeZone()
         formatter.dateFormat = format

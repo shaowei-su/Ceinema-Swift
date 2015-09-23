@@ -19,7 +19,8 @@ class WebViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
+            print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }

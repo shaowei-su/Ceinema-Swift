@@ -301,7 +301,9 @@
 		9EF296EE1B48AF02003F3F44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = shaowei;
 				TargetAttributes = {
 					9EF296F51B48AF02003F3F44 = {
@@ -453,6 +455,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -534,6 +537,7 @@
 					"$(PROJECT_DIR)/CeinemaNew",
 					"$(PROJECT_DIR)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cei.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CEInema;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CeinemaNew/CeinemaNew-Bridging-Header.h";
@@ -560,6 +564,7 @@
 					"$(PROJECT_DIR)/CeinemaNew",
 					"$(PROJECT_DIR)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cei.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CEInema;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CeinemaNew/CeinemaNew-Bridging-Header.h";
@@ -570,16 +575,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = CeinemaNewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ur.shaowei.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CEInemaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CEInema.app/CEInema";
 			};
@@ -589,12 +592,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CeinemaNewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ur.shaowei.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CEInemaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CEInema.app/CEInema";
 			};

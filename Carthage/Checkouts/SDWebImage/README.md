@@ -26,7 +26,7 @@ It provides:
 - Arm64 support
 
 NOTE: The version 3.0 of SDWebImage isn't fully backward compatible with 2.0 and requires iOS 5.1.1
-minimum deployement version. If you need iOS < 5.0 support, please use the last [2.0 version](https://github.com/rs/SDWebImage/tree/2.0-compat).
+minimum deployment version. If you need iOS < 5.0 support, please use the last [2.0 version](https://github.com/rs/SDWebImage/tree/2.0-compat).
 
 [How is SDWebImage better than X?](https://github.com/rs/SDWebImage/wiki/How-is-SDWebImage-better-than-X%3F)
 
@@ -74,7 +74,7 @@ handled for you, from async downloads to caching management.
 
 ### Using blocks
 
-With blocks, you can be notified about the image download progress and whenever the image retrival
+With blocks, you can be notified about the image download progress and whenever the image retrieval
 has completed with success or not:
 
 ```objective-c
@@ -234,7 +234,7 @@ pod 'SDWebImage', '~>3.7'
 
 ### Installation with Carthage (iOS 8+)
 
-[Carthage](https://github.com/Carthage/Carthage) is a lightweight dependency manager for Swift and Objective-C. It leverages CocoaTouch modules and ins less invasive than CocoaPods.
+[Carthage](https://github.com/Carthage/Carthage) is a lightweight dependency manager for Swift and Objective-C. It leverages CocoaTouch modules and is less invasive than CocoaPods.
 
 To install with carthage, follow the instruction on [Carthage](https://github.com/Carthage/Carthage)
 

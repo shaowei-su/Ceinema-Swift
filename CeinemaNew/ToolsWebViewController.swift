@@ -20,7 +20,7 @@ class ToolsWebViewController: UIViewController {
         
         //add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }

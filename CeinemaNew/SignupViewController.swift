@@ -29,17 +29,18 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         ///add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
+            print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
     }
     /// Show notifications with message string
     ///
-    /// :param: msg message string that needs to be demontrated
-    /// :returns: none
+    /// - parameter msg: message string that needs to be demontrated
+    /// - returns: none
     private func showMsg(msg:String) {
-        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        let alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
     }
     
@@ -47,28 +48,30 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     /// Checks the validation of inputed email address.
     /// If the address is correct, then make a http request to save the registration info
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     private func confirm() {
         
-        if SignupEmail.text.isEmpty {
+        if SignupEmail.text!.isEmpty {
             showMsg("Please sign up with your email address, thanks.")
             return
         }
-        if !isValidEmail(SignupEmail.text) {
+        if !isValidEmail(SignupEmail.text!) {
             showMsg("Please make sure your email address is correct, thanks.")
             return
         }
-        var name = SignupName.text
-        var email = SignupEmail.text
+        var name = SignupName.text!
+        var email = SignupEmail.text!
         //save email to web sever
-        name = name.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        email = email.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        name = name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        email = email.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        //name = name.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        //email = email.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         let idString = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=saveSubscriber&name=%@&email=%@", name, email) as String
         let url = NSURL(string: idString)
-        println("\(url)")
+        print("\(url)")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         }
         
         task.resume()
@@ -92,12 +95,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     /// Change view position when keyboard shows up
     ///
-    /// :param: up indicate the direction of keyboard 
-    /// :param: moveValue indicate the amount of distance need to move
-    /// :returns: none
+    /// - parameter up: indicate the direction of keyboard 
+    /// - parameter moveValue: indicate the amount of distance need to move
+    /// - returns: none
     func animateViewMoving (up:Bool, moveValue :CGFloat){
-        var movementDuration:NSTimeInterval = 0.3
-        var movement:CGFloat = ( up ? -moveValue : moveValue)
+        let movementDuration:NSTimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(movementDuration )
@@ -107,8 +110,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     /// Validate the email address
     ///
-    /// :param: String input email address
-    /// :returns: Bool indicate if the addresss is valid or not
+    /// - parameter String: input email address
+    /// - returns: Bool indicate if the addresss is valid or not
     func isValidEmail(testStr:String) -> Bool {
         // println("validate calendar: \(testStr)")
         let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"

@@ -53,7 +53,8 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         super.viewWillAppear(animated)
         //add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = reflect(self).summary
+            let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
+            print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
@@ -80,10 +81,10 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     
     /// Show notification messages
     ///
-    /// :param: msg message string that needs to be demonstrated
-    /// :returns: none
+    /// - parameter msg: message string that needs to be demonstrated
+    /// - returns: none
     private func showMsg(msg:String) {
-        var alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
+        let alert = UIAlertView(title: "Notice", message: msg, delegate: nil, cancelButtonTitle: "ok")
         alert.show()
     }
 
@@ -92,8 +93,8 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// 1. Use MBProgressHUD to add the loading activity indicator, start parse() with a separate queue at background.
     /// 2. Create a search controller then add to the tableview
     ///
-    /// :param: nothing
-    /// :returns: nothing
+    /// - parameter nothing:
+    /// - returns: nothing
     func preParsing() {
         
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -126,25 +127,25 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// begin parse with NSXMLParser()
     func beginParsing() {
         posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://ceitraining.org/web_services/media.cfc?method=iosGetMedia&sortBy=media_date_released&sortByOrder=DESC")))!
+        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://ceitraining.org/web_services/media.cfc?method=iosGetMedia&sortBy=media_date_released&sortByOrder=DESC"))!)!
         parser.delegate = self
         parser.parse()
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName
         if (elementName as NSString).isEqualToString("row") {
-            elements = NSMutableDictionary.alloc()
+            elements = NSMutableDictionary()
             elements = [:]
-            mediaTitle = NSMutableString.alloc()
+            mediaTitle = NSMutableString()
             mediaTitle = ""
-            presenterName = NSMutableString.alloc()
+            presenterName = NSMutableString()
             presenterName = ""
-            mediaDateReleased = NSMutableString.alloc()
+            mediaDateReleased = NSMutableString()
             mediaDateReleased = ""
-            mediaThumbPath = NSMutableString.alloc()
+            mediaThumbPath = NSMutableString()
             mediaThumbPath = ""
-            mediaID = NSMutableString.alloc()
+            mediaID = NSMutableString()
             mediaID = ""
         }
     }
@@ -173,17 +174,17 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         }
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String?) {
+    func parser(parser: NSXMLParser, foundCharacters string: String) {
         if element.isEqualToString("title") {
-            mediaTitle.appendString(string!)
+            mediaTitle.appendString(string)
         } else if element.isEqualToString("presenterName") {
-            presenterName.appendString(string!)
+            presenterName.appendString(string)
         } else if element.isEqualToString("date") {
-            mediaDateReleased.appendString(string!)
+            mediaDateReleased.appendString(string)
         } else if element.isEqualToString("thumbnail") {
-            mediaThumbPath.appendString(string!)
+            mediaThumbPath.appendString(string)
         } else if element.isEqualToString("mediaID") {
-            mediaID.appendString(string!)
+            mediaID.appendString(string)
         }
     }
     // MARK: - Table view data source
@@ -221,21 +222,22 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             presenterNameRead = presenterNameRead.stringByReplacingOccurrencesOfString("|", withString: "\n")
         }
         cell.mediaPresentor?.text = presenterNameRead
-        let test = displayPost.valueForKey("presenterName") as! NSString as String
+        _ = displayPost.valueForKey("presenterName") as! NSString as String
         //trim date format
         cell.mediaDate?.text = displayPost.valueForKey("mediaDateReleased") as! NSString as String
         
         //load image asynchronously
-        var imagePath = displayPost.valueForKey("mediaThumbPath") as! NSString as String
+        let imagePath = displayPost.valueForKey("mediaThumbPath") as! NSString as String
         if imagePath.isEmpty {
             cell.mediaImage?.image = UIImage(named: "logo")
         } else {
             let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType, imageURL: NSURL!) -> Void in
                 //println(imageURL)
             }
-            var escapeImagePath = imagePath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            var escapeImagePath = imagePath.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+            //var escapeImagePath = imagePath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             escapeImagePath = escapeImagePath.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
-            var urlString = NSString(format: "http://www.ceitraining.org/resources/\(escapeImagePath)")
+            let urlString = NSString(format: "http://www.ceitraining.org/resources/\(escapeImagePath)")
             let imageUrl = NSURL(string: urlString as String)
             cell.mediaImage.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "logo"), completed: block)
             
@@ -251,11 +253,11 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             if let navController = segue.destinationViewController as? UINavigationController {
                 if let destination = navController.topViewController as? MediaDetailViewController {
                     if self.resultSearchController.active {
-                        if let mediaIndex = tableView.indexPathForSelectedRow()?.row {
+                        if let mediaIndex = tableView.indexPathForSelectedRow?.row {
                             destination.mediaID = filteredPosts[mediaIndex].valueForKey("mediaID") as! NSString as String
                         }
                     } else {
-                        if let mediaIndex = tableView.indexPathForSelectedRow()?.row {
+                        if let mediaIndex = tableView.indexPathForSelectedRow?.row {
                             destination.mediaID = posts.objectAtIndex(mediaIndex).valueForKey("mediaID") as! NSString as String
                         }
                     }
@@ -268,8 +270,8 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// Split input string by " "(empty space) for multiple search.
     /// Keywords match both media title and presenter name
     ///
-    /// :param: String user input string
-    /// :returns: nothing
+    /// - parameter String: user input string
+    /// - returns: nothing
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
         let postsArray = posts as AnyObject as! [NSMutableDictionary]
@@ -299,7 +301,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
         filteredPosts.removeAll(keepCapacity: false)
-        filterContentForSearchText(searchController.searchBar.text)
+        filterContentForSearchText(searchController.searchBar.text!)
 
         allData.reloadData()
     }
@@ -307,12 +309,13 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// Interact with webserver whenever finish search
     func willDismissSearchController(searchController: UISearchController) {
         var searchContents = searchController.searchBar.text
-        searchContents = searchContents.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        let searchString = "http://ceitraining.org/web_services/media.cfc?method=saveSearch&search=" + searchContents
+        searchContents = searchContents!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        //searchContents = searchContents!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        let searchString = "http://ceitraining.org/web_services/media.cfc?method=saveSearch&search=" + searchContents!
         let url = NSURL(string: searchString)
-        println("\(url)")
+        print("\(url)")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         }
         
         task.resume()
