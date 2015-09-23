@@ -54,7 +54,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         //add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
             let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
-            print("Screen name: \(screenName)")
+            //print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
@@ -234,7 +234,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
             let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType, imageURL: NSURL!) -> Void in
                 //println(imageURL)
             }
-            var escapeImagePath = imagePath.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+            var escapeImagePath = imagePath.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
             //var escapeImagePath = imagePath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             escapeImagePath = escapeImagePath.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
             let urlString = NSString(format: "http://www.ceitraining.org/resources/\(escapeImagePath)")
@@ -250,16 +250,14 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     //seque to the detail view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowMediaSegue" {
-            if let navController = segue.destinationViewController as? UINavigationController {
-                if let destination = navController.topViewController as? MediaDetailViewController {
-                    if self.resultSearchController.active {
-                        if let mediaIndex = tableView.indexPathForSelectedRow?.row {
-                            destination.mediaID = filteredPosts[mediaIndex].valueForKey("mediaID") as! NSString as String
-                        }
-                    } else {
-                        if let mediaIndex = tableView.indexPathForSelectedRow?.row {
-                            destination.mediaID = posts.objectAtIndex(mediaIndex).valueForKey("mediaID") as! NSString as String
-                        }
+            if let destination = segue.destinationViewController as? MediaDetailViewController {
+                if self.resultSearchController.active {
+                    if let mediaIndex = tableView.indexPathForSelectedRow?.row {
+                        destination.mediaID = filteredPosts[mediaIndex].valueForKey("mediaID") as! NSString as String
+                    }
+                } else {
+                    if let mediaIndex = tableView.indexPathForSelectedRow?.row {
+                        destination.mediaID = posts.objectAtIndex(mediaIndex).valueForKey("mediaID") as! NSString as String
                     }
                 }
             }
@@ -309,7 +307,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// Interact with webserver whenever finish search
     func willDismissSearchController(searchController: UISearchController) {
         var searchContents = searchController.searchBar.text
-        searchContents = searchContents!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        searchContents = searchContents!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
         //searchContents = searchContents!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let searchString = "http://ceitraining.org/web_services/media.cfc?method=saveSearch&search=" + searchContents!
         let url = NSURL(string: searchString)

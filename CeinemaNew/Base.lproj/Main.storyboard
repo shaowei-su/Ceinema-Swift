@@ -649,7 +649,7 @@ Persons using this website and application agree to indemnify and hold harmless 
                                     <outlet property="mediaImage" destination="R31-yy-gyR" id="7gJ-cY-VtM"/>
                                     <outlet property="mediaPresentor" destination="Hs9-uZ-74b" id="gPV-mF-HJY"/>
                                     <outlet property="mediaTitle" destination="nj4-fX-bXN" id="hiv-6p-Q9r"/>
-                                    <segue destination="jtN-dY-kOl" kind="show" identifier="ShowMediaSegue" id="JVJ-o1-mT0"/>
+                                    <segue destination="jQx-pP-CJJ" kind="show" identifier="ShowMediaSegue" id="nkE-KL-YGV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -827,24 +827,6 @@ Persons using this website and application agree to indemnify and hold harmless 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UT5-T5-9iG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="576" y="351"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SJ1-Gm-yXY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jtN-dY-kOl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X4K-s1-LDr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jQx-pP-CJJ" kind="relationship" relationship="rootViewController" id="7Sb-W5-Jdo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="knk-si-ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1953" y="-342"/>
         </scene>
         <!--Signup-->
         <scene sceneID="iTk-dp-aqU">
@@ -1038,7 +1020,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <image name="tool" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WqO-8N-Pys"/>
         <segue reference="uEs-g8-PNT"/>
+        <segue reference="nkE-KL-YGV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -63,8 +63,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         var name = SignupName.text!
         var email = SignupEmail.text!
         //save email to web sever
-        name = name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
-        email = email.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        name = name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
+        email = email.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
         //name = name.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         //email = email.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         let idString = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=saveSubscriber&name=%@&email=%@", name, email) as String

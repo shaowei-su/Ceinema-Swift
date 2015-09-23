@@ -84,9 +84,10 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         
         //add Google Analytics
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = Mirror(reflecting: self).description
+            let screenName = Mirror(reflecting: self).description.stringByReplacingOccurrencesOfString("Mirror for ", withString: "")
+            //print("Screen name: \(screenName)")
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
-            appDelegate.tracker!.send(build as! [NSObject : AnyObject])
+            appDelegate.tracker!.send(build as [NSObject : AnyObject])
         }
     }
     
@@ -141,8 +142,9 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        print("mediaid = \(mediaID)")
         beginParsing()
-        videoFormatFileName = videoFormatFileName.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        videoFormatFileName = videoFormatFileName.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
         //videoFormatFileName = videoFormatFileName.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         videoFormatFileName = videoFormatFileName.stringByReplacingOccurrencesOfString("_high.3gp", withString: "")
         videoFormatFileName = videoFormatFileName.stringByReplacingOccurrencesOfString("_low.3gp", withString: "")
@@ -162,7 +164,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     /// - parameter nothing:
     /// - returns: nothing
     func beginParsing() {
-        mediaID = mediaID.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        mediaID = mediaID.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
         //mediaID = mediaID.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         mediaID = mediaID.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
         fetchUrl = NSString(format: "http://ceitraining.org/web_services/media.cfc?method=iosGetSingleMedium&mediaID=%@", mediaID) as String
@@ -205,7 +207,7 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
                 let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType, imageURL: NSURL!) -> Void in
                     //println(imageURL)
                 }
-                var escapeImagePath = mediaImageThumb.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                var escapeImagePath = mediaImageThumb.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
                 //var escapeImagePath = mediaImageThumb.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 escapeImagePath = escapeImagePath.stringByReplacingOccurrencesOfString("%0A%20%20%20%20%20%20%20%20%20%20%20%20", withString: "")
                 let urlString = NSString(format: "http://www.ceitraining.org/resources/\(escapeImagePath)")
@@ -221,18 +223,21 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
-    @IBAction func saveButton(sender: AnyObject) throws {
+    @IBAction func saveButton(sender: AnyObject) {
         let alert = UIAlertController(title: "Save to favorites", message: "Add this course for future review", preferredStyle: .Alert)
         
 //        let saveAction = UIAlertAction(title: "Save", style: .Default) { (alert: UIAlertAction!) -> Void in
 //                try self.saveMedia(self.mediaTitle, presenter: self.presenterName, date: self.mediaDate, imageThumbnail: self.imgThumbnail, id: self.mediaID)
 //        }
-        
+        let saveAction = UIAlertAction(title: "Save",
+            style: .Default) { (action: UIAlertAction) -> Void in
+                self.saveMedia(self.mediaTitle, presenter: self.presenterName, date: self.mediaDate, imageThumbnail: self.imgThumbnail, id: self.mediaID)
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
             (action: UIAlertAction) -> Void in
         }
         
-        //alert.addAction(saveAction)
+        alert.addAction(saveAction)
         alert.addAction(cancelAction)
         
         presentViewController(alert, animated: true, completion: nil)
@@ -248,14 +253,14 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
     /// - parameter date: Date of the presentation
     /// - parameter imageThumbnail: Short url of thumbnail image
     /// - returns: nothing
-    func saveMedia(title: String, presenter: String, date: String, imageThumbnail: String, id: String) throws {
+    func saveMedia(title: String, presenter: String, date: String, imageThumbnail: String, id: String) {
         //save mediaID to web sever
         var idContent = id
-        idContent = idContent.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        idContent = idContent.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
         //idContent = idContent.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         let idString = "http://ceitraining.org/web_services/media.cfc?method=saveFavorite&mediaID=" + idContent
         let url = NSURL(string: idString)
-        print("\(url)")
+        //print("\(url)")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         }
@@ -266,15 +271,12 @@ class MediaDetailViewController: UIViewController, MFMailComposeViewControllerDe
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         let entity = NSEntityDescription.entityForName("LocalSavedMedia", inManagedObjectContext: managedContext)
-        
-        
-        var error: NSError?
+    
         
         do {
             try managedContext.save()
-        } catch let error1 as NSError {
-            error = error1
-            print("error when save: + \(error)")
+        } catch {
+            print("error when save")
         }
         //remove duplications before save
         let fetchRequestDup = NSFetchRequest(entityName: "LocalSavedMedia")
