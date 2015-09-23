@@ -20,6 +20,7 @@ class AllTableViewCell: UITableViewCell {
     @IBOutlet weak var mediaPresentor: UILabel!
     /// Lecture date label outlet
     @IBOutlet weak var mediaDate: UILabel!
-
+    /// Lecture ribbon tag that applies to latest released 
+    @IBOutlet weak var mediaNewTag: UIImageView!
 
 }

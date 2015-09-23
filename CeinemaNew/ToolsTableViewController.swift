@@ -124,20 +124,5 @@ class ToolsTableViewController: UITableViewController {
     }
 }
 
-extension String {
-    /// Extension of String to easily convert from string to date
-    ///
-    /// - parameter format: string the format of inputed string date
-    /// - returns: NSDate the NSDate generated
-    func toDate(let format:String = "yyyy-MM-dd") -> NSDate? {
-        let formatter:NSDateFormatter = NSDateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        formatter.timeZone = NSTimeZone()
-        formatter.dateFormat = format
-        
-        return formatter.dateFromString(self)
-    }
-}
-
 
 

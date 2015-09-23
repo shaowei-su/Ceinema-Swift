@@ -47,7 +47,7 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     /// contains lectures that are filtered by search controller
     var filteredPosts = [NSMutableDictionary]()
     /// search controller for user defined search
-    var resultSearchController = UISearchController()
+    var resultSearchController: UISearchController = UISearchController()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -226,6 +226,52 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
         //trim date format
         cell.mediaDate?.text = displayPost.valueForKey("mediaDateReleased") as! NSString as String
         
+        //convert date format
+        let dateUnSeperated = displayPost.valueForKey("mediaDateReleased") as! NSString as String
+        var dateSeperated = dateUnSeperated.characters.split {$0 == " "}.map { String($0) }
+        switch dateSeperated[0] as String {
+            case "Dec":
+                dateSeperated[0] = "12"
+            case "Nov":
+                dateSeperated[0] = "11"
+            case "Oct":
+                dateSeperated[0] = "10"
+            case "Sep":
+                dateSeperated[0] = "09"
+            case "Aug":
+                dateSeperated[0] = "08"
+            case "Jul":
+                dateSeperated[0] = "07"
+            case "Jun":
+                dateSeperated[0] = "06"
+            case "May":
+                dateSeperated[0] = "05"
+            case "Apr":
+                dateSeperated[0] = "04"
+            case "Mar":
+                dateSeperated[0] = "03"
+            case "Feb":
+                dateSeperated[0] = "02"
+            case "Jan":
+                dateSeperated[0] = "01"
+            default:
+                break
+        }
+        dateSeperated[1] = dateSeperated[1].stringByReplacingOccurrencesOfString(",", withString: "")
+        //print("mon = \(dateSeperated[0]) day = \(dateSeperated[1]) year = \(dateSeperated[2])")
+        //check for new updates
+        let toolDate = (dateSeperated[2] + "-" + dateSeperated[0] + "-" + dateSeperated[1]).toDate()
+        let components = NSDateComponents()
+        components.setValue(-1, forComponent: NSCalendarUnit.Month);
+        let date: NSDate = NSDate()
+        let expirationDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))
+        //print("date: \(toolDate) expireDate: \(expirationDate)")
+        let compareOrder = toolDate!.compare(expirationDate!)
+        if compareOrder == NSComparisonResult.OrderedDescending {
+            cell.mediaNewTag.image = UIImage(named: "newtag")
+        } else {
+            cell.mediaNewTag.image = nil
+        }
         //load image asynchronously
         let imagePath = displayPost.valueForKey("mediaThumbPath") as! NSString as String
         if imagePath.isEmpty {
@@ -323,6 +369,21 @@ class AllTableViewController: UITableViewController, NSXMLParserDelegate, UISear
     @IBAction func refreshTable(sender: UIRefreshControl?) {
         beginParsing()
         sender?.endRefreshing()
+    }
+}
+
+extension String {
+    /// Extension of String to easily convert from string to date
+    ///
+    /// - parameter format: string the format of inputed string date
+    /// - returns: NSDate the NSDate generated
+    func toDate(let format:String = "yyyy-MM-dd") -> NSDate? {
+        let formatter:NSDateFormatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.timeZone = NSTimeZone()
+        formatter.dateFormat = format
+        
+        return formatter.dateFromString(self)
     }
 }
 
