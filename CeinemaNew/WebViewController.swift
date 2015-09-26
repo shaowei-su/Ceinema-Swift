@@ -28,7 +28,7 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = NSURL (string: "http://m.ceitraining.org")
+        let url = NSURL (string: "http://ceitraining.org/?mobile=no")
         let requestObj = NSURLRequest(URL: url!)
         self.webView.loadRequest(requestObj)
         // Do any additional setup after loading the view.
