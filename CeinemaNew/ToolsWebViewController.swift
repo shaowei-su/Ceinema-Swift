@@ -49,6 +49,9 @@ class ToolsWebViewController: UIViewController {
         
     }
     
+    @IBAction func openSafari(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: self.toolUrl)!)
+    }
     @IBAction func rewindWebView(sender: AnyObject) {
         toolWebView.goBack()
     }

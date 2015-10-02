@@ -515,6 +515,12 @@ Persons using this website and application agree to indemnify and hold harmless 
                                             <action selector="forwardWebView:" destination="BH5-zZ-TTE" id="2iO-Z6-QEp"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fbd-QB-MRC"/>
+                                    <barButtonItem image="safari" id="BGr-w7-FOp">
+                                        <connections>
+                                            <action selector="openSafari:" destination="BH5-zZ-TTE" id="WAj-4F-AyT"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1073,6 +1079,7 @@ Persons using this website and application agree to indemnify and hold harmless 
         <image name="home30" width="30" height="30"/>
         <image name="logo" width="130" height="70"/>
         <image name="play-button" width="76" height="76"/>
+        <image name="safari" width="24" height="24"/>
         <image name="tag30" width="30" height="30"/>
         <image name="tool" width="30" height="30"/>
     </resources>
