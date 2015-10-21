@@ -111,17 +111,25 @@ class ToolsTableViewController: UITableViewController {
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowToolWebSegue" {
-            if let destination = segue.destinationViewController as? ToolsWebViewController {
-                if let toolIndex = tableView.indexPathForSelectedRow?.row {
-                    let shortUrl = xmlParsed!["data"]["row"][toolIndex]["simulationUrl"].element?.text
-                    let siUrl = NSString(format: "http://m.ceitraining.org/app/guidelines/%@/index.jsp", shortUrl!) as String
-                    destination.toolUrl = siUrl
-                }
-            }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let toolIndex = tableView.indexPathForSelectedRow?.row {
+            let shortUrl = xmlParsed!["data"]["row"][toolIndex]["simulationUrl"].element?.text
+            let siUrl = NSString(format: "http://m.ceitraining.org/app/guidelines/%@/index.jsp", shortUrl!) as String
+            UIApplication.sharedApplication().openURL(NSURL(string: siUrl)!)
         }
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "ShowToolWebSegue" {
+//            if let destination = segue.destinationViewController as? ToolsWebViewController {
+//                if let toolIndex = tableView.indexPathForSelectedRow?.row {
+//                    let shortUrl = xmlParsed!["data"]["row"][toolIndex]["simulationUrl"].element?.text
+//                    let siUrl = NSString(format: "http://m.ceitraining.org/app/guidelines/%@/index.jsp", shortUrl!) as String
+//                    destination.toolUrl = siUrl
+//                }
+//            }
+//        }
+//    }
 }
 
 
