@@ -16,7 +16,7 @@ public class Reachability {
     class func isConnectedToNetwork() -> Bool { 
         
         var Status:Bool = false
-        let url = NSURL(string: "http://ceitraining.com/")
+        let url = NSURL(string: "http://ceitraining.org/")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "HEAD"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
