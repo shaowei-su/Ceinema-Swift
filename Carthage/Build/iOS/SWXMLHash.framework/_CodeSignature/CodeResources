@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SWXMLHash-Swift.h</key>
 		<data>
-		Zc60cCH84xOg62mx0jjLzhwA0ok=
+		5f56vAi1NKgQVFkAFbUyXG6tljA=
 		</data>
 		<key>Headers/SWXMLHash.h</key>
 		<data>
@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		q2J4ffRaOUjJpNcWMr0E2qjC/HE=
+		0M0DerNt9bfGWJYzR90BfKsjpb8=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm.swiftdoc</key>
 		<data>
-		tD70UboJT8tWhNAj1lq6xG+TAfc=
+		EPL324DVLhCnPvLOrEMeuQlN44M=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm.swiftmodule</key>
 		<data>
-		VZrs8ryzb+8thKXPt2WEWg5GXLg=
+		Y6W7fkpeRs4lQLA1msIP7uCaZs4=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		5tqMPA3DaiPuupTSf+A8VxeK0Aw=
+		vGUhuSqhNsBR+FvqjMFd15GNCEA=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		rVTECFXLV3Zha9M4mRRKRHogSIE=
+		FYVFS6X2AMOH2EhdPRwJdwIXKpI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,7 +41,7 @@
 	<dict>
 		<key>Headers/SWXMLHash-Swift.h</key>
 		<data>
-		Zc60cCH84xOg62mx0jjLzhwA0ok=
+		5f56vAi1NKgQVFkAFbUyXG6tljA=
 		</data>
 		<key>Headers/SWXMLHash.h</key>
 		<data>
@@ -49,19 +49,19 @@
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm.swiftdoc</key>
 		<data>
-		tD70UboJT8tWhNAj1lq6xG+TAfc=
+		EPL324DVLhCnPvLOrEMeuQlN44M=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm.swiftmodule</key>
 		<data>
-		VZrs8ryzb+8thKXPt2WEWg5GXLg=
+		Y6W7fkpeRs4lQLA1msIP7uCaZs4=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		5tqMPA3DaiPuupTSf+A8VxeK0Aw=
+		vGUhuSqhNsBR+FvqjMFd15GNCEA=
 		</data>
 		<key>Modules/SWXMLHash.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		rVTECFXLV3Zha9M4mRRKRHogSIE=
+		FYVFS6X2AMOH2EhdPRwJdwIXKpI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

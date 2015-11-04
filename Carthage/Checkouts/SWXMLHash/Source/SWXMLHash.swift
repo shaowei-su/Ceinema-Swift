@@ -63,7 +63,6 @@ public class SWXMLHash {
     Method to parse XML passed in as a string.
 
     - parameter xml: The XML to be parsed
-
     - returns: An XMLIndexer instance that is used to look up elements in the XML
     */
     class public func parse(xml: String) -> XMLIndexer {
@@ -74,7 +73,6 @@ public class SWXMLHash {
     Method to parse XML passed in as an NSData instance.
 
     - parameter xml: The XML to be parsed
-
     - returns: An XMLIndexer instance that is used to look up elements in the XML
     */
     class public func parse(data: NSData) -> XMLIndexer {
@@ -84,9 +82,8 @@ public class SWXMLHash {
     /**
     Method to lazily parse XML passed in as a string.
 
-    :param: xml The XML to be parsed
-
-    :returns: An XMLIndexer instance that is used to look up elements in the XML
+    - parameter xml: The XML to be parsed
+    - returns: An XMLIndexer instance that is used to look up elements in the XML
     */
     class public func lazy(xml: String) -> XMLIndexer {
         return config { conf in conf.shouldProcessLazily = true }.parse(xml)
@@ -95,9 +92,8 @@ public class SWXMLHash {
     /**
     Method to lazily parse XML passed in as an NSData instance.
 
-    :param: xml The XML to be parsed
-
-    :returns: An XMLIndexer instance that is used to look up elements in the XML
+    - parameter xml: The XML to be parsed
+    - returns: An XMLIndexer instance that is used to look up elements in the XML
     */
     class public func lazy(data: NSData) -> XMLIndexer {
         return config { conf in conf.shouldProcessLazily = true }.parse(data)
@@ -179,7 +175,7 @@ class LazyXMLParser: NSObject, SimpleXmlParser, NSXMLParserDelegate {
             current.text = ""
         }
 
-        parentStack.top().text! += string
+        current.text! += string
     }
 
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
@@ -241,7 +237,7 @@ class XMLParser: NSObject, SimpleXmlParser, NSXMLParserDelegate {
             current.text = ""
         }
 
-        parentStack.top().text! += string
+        current.text! += string
     }
 
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
@@ -363,7 +359,6 @@ public enum XMLIndexer: SequenceType {
 
     - parameter attr: should the name of the attribute to match on
     - parameter value: should be the value of the attribute to match on
-
     - returns: instance of XMLIndexer
     */
     public func withAttr(attr: String, _ value: String) throws -> XMLIndexer {
@@ -394,7 +389,6 @@ public enum XMLIndexer: SequenceType {
     Initializes the XMLIndexer
 
     - parameter _: should be an instance of XMLElement, but supports other values for error handling
-
     - returns: instance of XMLIndexer
     */
     public init(_ rawObject: AnyObject) throws {
@@ -420,16 +414,10 @@ public enum XMLIndexer: SequenceType {
     Find an XML element at the current level by element name
 
     - parameter key: The element name to index by
-
     - returns: instance of XMLIndexer to match the element (or elements) found by key
-
-    - errors: throws a XMLIndexerError.Key if no element was found
-
+    - throws: Throws an XMLIndexerError.Key if no element was found
+    - TODO: Change to throwing subscripts if available in futher releases
     */
-
-    // Because Swift 2 does not support throwing subscripts use the byKey and byIndex function instead
-    // TODO: Change to throwing subscripts if avaiable in futher releases
-
     public func byKey(key: String) throws -> XMLIndexer {
         switch self {
         case .Stream(let opStream):
@@ -456,11 +444,8 @@ public enum XMLIndexer: SequenceType {
     Find an XML element at the current level by element name
 
     - parameter key: The element name to index by
-
     - returns: instance of XMLIndexer to match the element (or elements) found by
-
     */
-
     public subscript(key: String) -> XMLIndexer {
         do {
            return try self.byKey(key)
@@ -475,12 +460,9 @@ public enum XMLIndexer: SequenceType {
     Find an XML element by index within a list of XML Elements at the current level
 
     - parameter index: The 0-based index to index by
-
     - returns: instance of XMLIndexer to match the element (or elements) found by key
+    - TODO: Change to throwing subscripts if available in futher releases
     */
-
-    // TODO: Change to throwing subscripts if avaiable in futher releases
-
     public func byIndex(index: Int) throws -> XMLIndexer {
         switch self {
         case .Stream(let opStream):
@@ -583,9 +565,8 @@ public class XMLElement {
     /**
     Initialize an XMLElement instance
 
-    - parameter name: The name of the element to be initialized
-
-    - returns: a new instance of XMLElement
+    -parameter name: The name of the element to be initialized
+    -returns: a new instance of XMLElement
     */
     init(name: String, index: Int = 0) {
         self.name = name
@@ -597,7 +578,6 @@ public class XMLElement {
 
     - parameter name: The name of the new element to be added
     - parameter withAttributes: The attributes dictionary for the element being added
-
     - returns: The XMLElement that has now been added
     */
     func addElement(name: String, withAttributes attributes: NSDictionary) -> XMLElement {
